@@ -26,15 +26,15 @@
       #nav-container.row
         .grid_12
           %a#logo
-          = render partial: 'layouts/navigation'
+          / = render partial: 'layouts/navigation'
       .clear
-      = render partial: 'layouts/slider'    
+      / = render partial: 'layouts/slider'    
 
     %section#main-container
       .row
         .grid_12
-          = render partial: 'layouts/notices'
-          = yield
+          / = render partial: 'layouts/notices'
+          / = yield
 
     %footer#copyright
-      = render partial: 'layouts/copyright'
+      / = render partial: 'layouts/copyright'
