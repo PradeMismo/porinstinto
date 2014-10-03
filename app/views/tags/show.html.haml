@@ -1,0 +1,12 @@
+= render partial: 'entries/left_sidebar'
+
+.grid_8
+  %article.post
+    - if current_admin.present? 
+      .right
+        = link_to "Nueva entrada", new_entry_path, :class => "button green hover"
+        = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
+
+    %h2="Noticias" 
+
+  = render partial: 'entries/entry_table'

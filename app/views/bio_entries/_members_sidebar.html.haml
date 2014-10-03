@@ -1,0 +1,18 @@
+%aside
+  - if current_admin.present?
+    = link_to "Nuevo miembro", new_member_path, :class => "button green hover"
+
+  .gallery_index
+    - @members.each do |member|
+      %li
+        - if current_admin.present?
+          .right
+            = link_to "Editar", edit_member_path(member), :class => "button blue" 
+            = link_to "Borrar", member, :method => :delete, :class => "button red"
+        .box
+          = image_tag member.photo.url(:cover), :class => 'cover'
+          %h3= member.name
+          %p
+            %strong= member.instrument
+
+        .separator

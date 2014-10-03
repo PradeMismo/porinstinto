@@ -1,0 +1,11 @@
+.right
+  = link_to "Nuevo slide", new_slide_path, :class => "button green hover" if (@slides.count < 4)
+  = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
+
+%h2="slides" 
+
+- @slides.each do |slide|
+  .right  
+    = link_to "Editar", edit_slide_path(slide), :class => "button blue" 
+    = link_to "Borrar", slide, :method => :delete, :class => "button red"
+  = image_tag slide.photo.url(:slide), :class => 'frame'

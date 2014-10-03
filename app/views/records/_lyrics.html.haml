@@ -1,0 +1,14 @@
+- if current_admin.present?
+  .right 
+    = link_to "Nueva canción", new_record_song_path(@record), :class => "button green hover"
+
+%h2= "Canciones" 
+
+#accordion
+  - @songs.each do |song|
+    %h6= song.track_order.to_s + ". " + song.name        
+    %p
+      - if current_admin.present? 
+        = link_to "Editar", edit_song_path(song), :class => "button blue" 
+        = link_to "Borrar", song, :method => :delete, :class => "button red"
+      = simple_format song.lyrics

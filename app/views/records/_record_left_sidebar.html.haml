@@ -1,0 +1,12 @@
+%aside.side-left
+  %br
+  = image_tag @record.photo.url(:cover), :class => 'frame'
+
+  - if @songs.present? 
+    = render partial: 'layouts/jplayer'
+
+  .separator
+
+  - if @record.download_link.present?
+    .center= link_to (image_tag "descarga.png"), @record.download_link, :class => 'frame'
+    .separator

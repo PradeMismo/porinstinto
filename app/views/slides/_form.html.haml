@@ -1,0 +1,22 @@
+= simple_form_for @slide, :html=> { id: 'form' } do |f|
+  .form-group
+    = f.label "Título:"
+    %br
+    = f.input :title, label: false
+  .form-group
+    = f.label "Descripción:"
+    %br
+    = f.input :description, label: false
+  .form-group
+    = f.label "Link:"
+    %br
+    = f.input :link, label: false
+  .form-group
+    = f.label "Orden:"
+    %br
+    = f.input :slide_order, label: false, required: true
+  .form-group
+    = f.label "Imagen:"
+    %br
+    = f.file_field :photo, label: false
+  = f.button :submit

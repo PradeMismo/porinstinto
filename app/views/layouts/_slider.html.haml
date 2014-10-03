@@ -1,0 +1,11 @@
+#slider-container
+  .slider-wrapper
+    #slider.nivoSlider
+      - @slides.each do |slide|
+        %a{:href => slide.link, :target => "_new"}      
+          = image_tag slide.photo.url(:slide), :title => "#" + slide.slide_caption
+
+    - @slides.each do |slide|
+      .nivo-html-caption{:id => slide.slide_caption}
+        %strong= slide.title
+        %br= slide.description

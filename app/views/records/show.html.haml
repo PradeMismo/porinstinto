@@ -1,0 +1,18 @@
+= render partial: 'record_left_sidebar'
+.grid_8
+  %article.post
+    - if current_admin.present?
+      .right 
+        = link_to "Editar", edit_record_path(@record), :class => "button blue" 
+        = link_to "Borrar", @record, :method => :delete, :class => "button red"
+        = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
+    %h2= @record.name 
+
+    %p= @record.description
+
+    - if @record.download_link.present?
+      .center= link_to (image_tag "descarga.png"), @record.download_link, :class => 'frame'
+
+  .separator
+
+  = render partial: 'lyrics'

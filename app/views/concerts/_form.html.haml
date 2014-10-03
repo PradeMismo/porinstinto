@@ -1,0 +1,34 @@
+= simple_form_for @concert, :html=> { id: 'form' } do |f|
+  .form-group
+    = f.label "Fecha:"
+    %br
+    = f.datetime_select :date, label: false, required: true
+  .form-group
+    = f.label "Ciudad:"
+    %br
+    = f.input :place, label: false, required: true
+  .form-group
+    = f.label "Sala:"
+    %br
+    = f.input :concert_hall, label: false, required: true
+  .form-group
+    = f.label "Entradas:"
+    %br
+    = f.input :tickets, label: false, required: true
+  .form-group
+    = f.label "Bandas:"
+    %br
+    = f.input :bands, label: false
+  .form-group
+    = f.label "Notas:"
+    %br
+    = f.input :notes, label: false
+  .form-group
+    = f.label "Link al evento:"
+    %br
+    = f.input :event_link, label: false
+  .form-group
+    = f.label "Link venta de entradas:"
+    %br
+    = f.input :ticket_link, label: false
+  = f.button :submit

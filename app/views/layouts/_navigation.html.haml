@@ -1,0 +1,17 @@
+%ul#nav
+  - if current_admin.present? 
+    .right
+      = link_to "Editar Slider", slides_path, :class => "button blue"
+
+  %li.primary-menu
+    %a= link_to "Inicio", entries_path
+  %li.primary-menu
+    %a= link_to "Conciertos", concerts_path
+  %li.primary-menu
+    %a= link_to "Discografía", records_path
+  %li.primary-menu
+    %a= link_to "Bio", bio_entries_path
+  %li.primary-menu
+    %a= link_to "Fotos", photo_categories_path
+  %li.primary-menu
+    %a= link_to "Contacto", new_contact_path

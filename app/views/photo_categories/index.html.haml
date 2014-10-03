@@ -1,0 +1,16 @@
+%article.post
+  - if current_admin.present? 
+    .right
+      = link_to "Nueva categtoría", new_photo_category_path, :class => "button green hover"
+      = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
+
+  %h2="fotos" 
+
+.gallery_index
+  - @categories.each do |category|
+    %li
+      .box
+        = image_tag category.photo.url(:gallery), :class => 'cover'
+        %h3= category.title 
+        %p
+          %strong= link_to "Ver más", photo_category_path(category)

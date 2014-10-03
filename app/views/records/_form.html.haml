@@ -1,0 +1,25 @@
+= simple_form_for @record, :html=> { id: 'form' } do |f|
+  .form-group
+    = f.label "Fecha de publicación:"
+    %br
+    = f.date_select :publish_date, required: true
+  .form-group
+    = f.label "Título:"
+    %br
+    = f.input :name, label: false, required: true
+  .form-group
+    = f.label "Descripción:"
+    %br
+    = f.input :description, label: false, required: true
+  .form-group
+    = f.label "Own:"
+    .left= f.input :own, label: false
+  .form-group
+    = f.label "Link de descarga:"
+    %br
+    = f.input :download_link, label: false
+  .form-group
+    = f.label "Imagen:"
+    %br
+    = f.file_field :photo, label: false
+  = f.button :submit

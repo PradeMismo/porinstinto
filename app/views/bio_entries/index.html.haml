@@ -1,0 +1,28 @@
+.grid_8
+  %article.post
+    - if current_admin.present?
+      .right 
+        = link_to "Nuevo capítulo", new_bio_entry_path, :class => "button green hover"
+        = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
+    %h2= "Biografía"
+
+    #tabs
+      %ul#tabs-menu
+        - @bio_entries.each do |entry|
+          %li
+            = link_to ("Capítulo " + entry.chapter_order.to_s) , ("#" + entry.tab_container) 
+      #tabs-container
+        - @bio_entries.each do |entry|
+          .tabs{:id => entry.tab_container}
+            - if current_admin.present?
+              .right 
+                = link_to "Editar", edit_bio_entry_path(entry), :class => "button blue" 
+                = link_to "Borrar", entry, :method => :delete, :class => "button red"
+            %p
+              %strong= "Capítulo " + entry.chapter_order.to_s + ": " + entry.title        
+            %p= simple_format entry.content
+
+    .separator
+    = render partial: 'band_photo'
+
+= render partial: 'members_sidebar'

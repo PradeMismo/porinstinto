@@ -1,0 +1,12 @@
+%h2="Iniciar sesión" 
+
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name), id: 'form') do |f|
+  .form-group
+    = f.label "Email:"
+    %br
+    = f.input :email, label: false, required: false, autofocus: true
+  .form-group
+    = f.label "Contraseña:"
+    %br
+    = f.input :password, label: false, required: false
+  = f.button :submit, "Conectarse"

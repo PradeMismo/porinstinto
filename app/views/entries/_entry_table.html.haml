@@ -1,0 +1,30 @@
+- @entries.each do |entry|
+
+  %article.post
+    - if current_admin.present? 
+      .right
+        = link_to "Editar", edit_entry_path(entry), :class => "button blue" 
+        = link_to "Borrar", entry, :method => :delete, :class => "button red"
+
+    %h3= entry.title
+    .blog-links
+      %span.blog-link
+        %span.icon.timer 
+        =entry.publish_date.strftime("%d/%m/%Y")
+      %span.blog-link
+        %span.icon.tag 
+        = link_to "Catergoría: " + entry.tag.name, tag_path(entry.tag)
+
+    = link_to (image_tag entry.photo.url(:entry)), entry.photo.url, {:class => 'frame', target: "_blank"} if entry.photo.present? 
+
+    %p= simple_format entry.content
+
+    - if entry.youtube_link.present?
+      .center
+        %iframe{:frameborder => "0", :height => "315", :src => entry.youtube_embeed, :width => "420"}
+
+    .right= link_to "Ver más", entry.external_link, :method => :delete, :class => "button black" if entry.external_link.present?
+
+  .separator
+
+= will_paginate @entries
