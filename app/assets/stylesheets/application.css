@@ -42,7 +42,7 @@ header {
   background: #000000 url('header_bg.jpg') center;
 }
 /* IE6 Only */
-* html #background #000000 url(../images/header_bg.jpg) center;
+* html #background #000000 url('header_bg.jpg') center;
 
 
 #topbar {
