@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: 37349993fb40fae4fa079729a25dc99d5ef3c416
+  specs:
+    jquery-datatables-rails (2.2.3)
+      jquery-rails
+      sass-rails
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: d5268f153c40318ce7e2929ab0e50d1203ac83a8
   specs:
@@ -106,11 +114,6 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
-    rails_12factor (0.0.2)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.2)
-    rails_stdout_logging (0.0.3)
     railties (3.2.8)
       actionpack (= 3.2.8)
       activesupport (= 3.2.8)
@@ -157,12 +160,12 @@ DEPENDENCIES
   devise
   gon
   haml-rails (>= 0.3.4)
+  jquery-datatables-rails!
   jquery-rails
   mail_form
   paperclip!
   pg
   rails (= 3.2.8)
-  rails_12factor
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3

@@ -11,7 +11,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
 end
 
 # Gems used only for assets and not required
@@ -50,3 +49,5 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'gon'
 gem 'will_paginate', '~> 3.0.5'
 gem 'mail_form'
+
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
