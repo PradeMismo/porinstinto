@@ -1,7 +1,8 @@
 function loadSongsIntoPlayList(myPlayList){
   for (i = 0; i < gon.songs.length; i++) { 
+    var trackTitle = gon.songs[i].track_order + '. ' + gon.songs[i].name;
     myPlayList.add({
-      title: gon.songs[i].name,
+      title: trackTitle,
       oga: gon.songs[i].url
     });
   };
