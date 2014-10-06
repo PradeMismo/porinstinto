@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/rweng/jquery-datatables-rails.git
-  revision: 37349993fb40fae4fa079729a25dc99d5ef3c416
-  specs:
-    jquery-datatables-rails (2.2.3)
-      jquery-rails
-      sass-rails
-
-GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: d5268f153c40318ce7e2929ab0e50d1203ac83a8
   specs:
@@ -160,7 +152,6 @@ DEPENDENCIES
   devise
   gon
   haml-rails (>= 0.3.4)
-  jquery-datatables-rails!
   jquery-rails
   mail_form
   paperclip!
