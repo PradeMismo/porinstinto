@@ -14,5 +14,5 @@
         = link_to "Editar", edit_image_path(image), :class => "button blue" 
         = link_to "Borrar", image, :method => :delete, :class => "button red"
 
-      %a.fancybox.zoom{:href => image.photo, :rel => "gallery", :title => image.description}
+      %a{"data-lightbox" => @category.title, :href => image.photo.url, "data-title" => image.description, :class => 'zoom'}
         = image_tag image.photo.url(:cover), :class => 'shadow'
