@@ -1,13 +1,13 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'porinstinto.com'
+set :application, 'porinstinto'
 set :repo_url, 'git@github.com:PradeMismo/porinstinto.git'
+
 set :deploy_to, '/home/deploy/porinstinto'
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
 
 
 # Default branch is :master
@@ -51,4 +51,5 @@ namespace :deploy do
 
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
+  
 end
