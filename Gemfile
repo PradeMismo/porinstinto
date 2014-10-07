@@ -57,3 +57,4 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'gon'
 gem 'will_paginate', '~> 3.0.5'
 gem 'mail_form'
+gem 'magnific-popup-rails', '~> 0.9.9'
