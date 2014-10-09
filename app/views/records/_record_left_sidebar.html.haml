@@ -1,6 +1,8 @@
 %aside.side-left
   %br
-  = image_tag @record.photo.url(:cover), :class => 'frame'
+  %a{"data-lightbox" => @record.name, :href => @record.photo.url, "data-title" => @record.name, :class => 'zoom'}
+    = image_tag @record.photo.url(:cover), :class => 'frame' 
+  
 
   - if @songs.present? 
     = render partial: 'layouts/jplayer'

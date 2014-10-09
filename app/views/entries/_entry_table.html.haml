@@ -15,7 +15,9 @@
         %span.icon.tag 
         = link_to "Catergoría: " + entry.tag.name, tag_path(entry.tag)
 
-    = link_to (image_tag entry.photo.url(:entry)), entry.photo.url, {:class => 'frame', target: "_blank"} if entry.photo.present? 
+    - if entry.photo.present?
+      %a{"data-lightbox" => entry.title, :href => entry.photo.url, "data-title" => entry.title, :class => 'zoom'}
+        = image_tag entry.photo.url(:entry), :class => 'frame' 
 
     %p= simple_format entry.content
 
