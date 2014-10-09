@@ -7,6 +7,8 @@
         = link_to "Nueva entrada", new_entry_path, :class => "button green hover"
         = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
 
-    %h2="Noticias" 
+    %h2="Noticias"
+    
+  .separator   
 
   = render partial: 'entry_table'
