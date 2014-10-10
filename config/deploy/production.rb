@@ -4,9 +4,9 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, "porinstinto.com"
-role :web, "porinstinto.com"
-role :db,  "porinstinto.com", :primary => true
+role :app, %w{porinstinto.com}
+role :web, %w{porinstinto.com}
+role :db,  %w{porinstinto.com}
 
 # Extended Server Syntax
 # ======================
