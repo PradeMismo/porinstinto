@@ -21,7 +21,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: porinst_db
-  pool: 5
-  username: deploy
+  host: localhost
+  database: porinstinto_production
+  username:
   password: PiManager14
