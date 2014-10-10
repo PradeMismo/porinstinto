@@ -4,9 +4,9 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{porinstinto.com}
-role :web, %w{porinstinto.com}
-role :db,  %w{porinstinto.com}
+# role :app, %w{example.com}
+# role :web, %w{example.com}
+# role :db,  %w{example.com}
 
 # Extended Server Syntax
 # ======================
@@ -32,11 +32,11 @@ server '178.62.208.31', user: 'deploy', roles: %w{web app}
 # server 'example.com',
 #   user: 'user_name',
 #   roles: %w{web app},
-#   ssh_options: {
+  # ssh_options: {
 #     user: 'user_name', # overrides user setting above
 #     keys: %w(/home/user_name/.ssh/id_rsa),
 #     forward_agent: false,
 #     auth_methods: %w(publickey password)
-#     # password: 'please use keys'
-#   }
+  #   password: 'XXXXX'
+  # }
 # setting per server overrides global ssh_options

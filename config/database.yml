@@ -18,9 +18,10 @@ test:
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: porinst_db
   pool: 5
+  username: deploy
   password: PiManager14
-  timeout: 5000
