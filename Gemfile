@@ -47,8 +47,6 @@ gem 'capistrano-rails', '~> 1.1.1'
 # Add this if you're using rvm
 gem 'capistrano-rvm', github: "capistrano/rvm"
 
-gem 'activerecord-sqlite3-adapter'
-
 # To use debugger
 # gem 'debugger'
 
