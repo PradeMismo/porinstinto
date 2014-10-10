@@ -88,8 +88,9 @@ WebPi::Application.configure do
   #   user_name: ENV["GMAIL_USERNAME"],
   #   password: ENV["GMAIL_PASSWORD"]
   # }
-  # config.assets.precompile += ['grid.css']
-  # config.assets.precompile += ['anything-slider.css']
-  # config.assets.precompile += ['nivo-slider.css']
-  # config.assets.precompile += ['jPlayer.css']
+  config.assets.precompile += ['grid.css']
+  config.assets.precompile += ['anything-slider.css']
+  config.assets.precompile += ['nivo-slider.css']
+  config.assets.precompile += ['jPlayer.css']
+  config.assets.precompile += ['lightbox.css']
 end
