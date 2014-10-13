@@ -54,7 +54,6 @@ gem 'haml-rails', '>= 0.3.4'
 gem 'simple_form'
 gem 'devise'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'paperclip-nginx-upload'
 gem 'gon'
 gem 'will_paginate', '~> 3.0.5'
 gem 'mail_form'
