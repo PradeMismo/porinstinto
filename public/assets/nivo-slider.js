@@ -1,0 +1,1 @@
+$(window).load(function(){$("#slider").nivoSlider({effect:"random",slices:15,boxCols:8,boxRows:4,animSpeed:500,pauseTime:5e3,startSlide:0,directionNav:!0,directionNavHide:!0,controlNav:!0,controlNavThumbs:!1,controlNavThumbsFromRel:!0,keyboardNav:!0,pauseOnHover:!0,manualAdvance:!1})});
