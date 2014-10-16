@@ -929,7 +929,7 @@ ul.sub-menu, ul.sub-menu ul {
 
 #slider:after, #videoblock:after {
   content: " ";
-  background: url(img/slide-shadow.png) bottom center no-repeat;
+  background: url("img/slide-shadow.png") bottom center no-repeat;
   -moz-background-size: contain;
   -webkit-background-size: contain;
   -o-background-size: contain;
@@ -1133,7 +1133,7 @@ aside a {
   width: 300px;
   float: left;
   position: relative;
-  background: url("shadow-300.png") bottom no-repeat;
+  background: url("img/shadow-300.png") bottom no-repeat;
 }
 
 .gallery_index li.record {
@@ -1149,7 +1149,7 @@ aside a {
 
 .zoom {
   display: block;
-  background: #181818 url("zoom.png") no-repeat center center;
+  background: #181818 url("img/zoom.png") no-repeat center center;
 }
 
 /* Partial sliding on hover */
@@ -1271,7 +1271,7 @@ a#twitFollow {
   height: 48px;
   margin: 0 0 0 40px;
   /*text-indent:-9999px;*/
-  background: url(img/twitterbird.png) no-repeat;
+  background: url("img/twitterbird.png") no-repeat;
 }
 
 .bigtweet span.tweet_time_big {
@@ -1714,7 +1714,7 @@ input[type=submit]:hover {
   border: 1px solid #58d1f1 !important;
   text-shadow: 1px 1px 1px #fdfeff;
   background-color: #b6ebf9;
-  background-image: url(img/notif/info.png);
+  background-image: url("img/notif/info.png");
 }
 
 .notif.info a, .notif.info strong {
@@ -1727,7 +1727,7 @@ input[type=submit]:hover {
   border: 1px solid #e7d728 !important;
   text-shadow: 1px 1px 1px #f9f5c9;
   background-color: #f1e884;
-  background-image: url(img/notif/tip.png);
+  background-image: url("img/notif/tip.png");
 }
 
 .notif.tip a, .notif.tip strong {
@@ -1740,7 +1740,7 @@ input[type=submit]:hover {
   border: 1px solid #51af18 !important;
   text-shadow: 1px 1px 1px #b0ef8a;
   background-color: #83e647;
-  background-image: url(img/notif/success.png);
+  background-image: url("img/notif/success.png");
 }
 
 .notif.success a, .notif.success strong {
@@ -1753,7 +1753,7 @@ input[type=submit]:hover {
   border: 1px solid #972521 !important;
   text-shadow: 1px 1px 1px #e58986;
   background-color: #d74c47;
-  background-image: url(img/notif/error.png);
+  background-image: url("img/notif/error.png");
 }
 
 .notif.error a, .notif.error strong {
