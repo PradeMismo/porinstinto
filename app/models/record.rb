@@ -8,6 +8,8 @@ class Record < ActiveRecord::Base
   validates_attachment_presence :photo
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
 
+  default_scope order('publish_date ASC')
+
   scope :studio, where(own: true)
   scope :compilation, where(own: false)
 
