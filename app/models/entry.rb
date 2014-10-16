@@ -8,7 +8,7 @@ class Entry < ActiveRecord::Base
   validates_presence_of :title, :publish_date, :content, :tag_id
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
 
-  default_scope order('publish_date DESC')
+  default_scope order('publish_date ASC')
 
   def youtube_embeed
     youtube_id = ""
