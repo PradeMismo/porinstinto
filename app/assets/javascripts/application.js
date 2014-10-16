@@ -12,4 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require anything-slider
+//= require jplayer.playlist.min
+//= require jquery-ui
+//= require jquery.jplayer.min
+//= require jquery.mousewheel
+//= require jquery.nivo.slider.pack
+//= require lightbox.min
+//= require nivo-slider
+//= require populate_jplayer
+//= require quickstand
+//= require script
+//= require tooltipsy
 //= require_tree .
