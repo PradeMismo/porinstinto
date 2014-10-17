@@ -1,5 +1,5 @@
 class Record < ActiveRecord::Base
-  attr_accessible :name, :publish_date, :description, :download_link, :own, :photo
+  attr_accessible :name, :publish_date, :description, :download_link, :own, :photo, :youtube_link, :spotify_link
  
   has_many :songs, dependent: :destroy
   has_attached_file :photo, :styles => {:cover => "260x260>", :gallery => "300x300>"}, dependent: :destroy
