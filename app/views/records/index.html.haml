@@ -4,10 +4,12 @@
       = link_to "Nuevo disco", new_record_path, :class => "button green hover"
       = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
 
-  %h2="discografía" 
+  %h2="discografía"
+  %br 
 = render partial: 'record_table', locals: {records: @studio_records}
 
 .separator
 
-  %h2="recopilatorios" 
+  %h2="recopilatorios"
+  %br 
   = render partial: 'record_table', locals: {records: @compilation_records}  

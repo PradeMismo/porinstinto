@@ -10,9 +10,14 @@
 
     %p= @record.description
 
-    - if @record.download_link.present?
-      .center= link_to (image_tag "descarga.png"), @record.download_link, :class => 'frame'
+    .center
+      - if @record.download_link.present?
+        = link_to (image_tag "descarga.png"), @record.download_link, :class => 'frame'
+      - if @record.youtube_link.present?
+        = link_to (image_tag "descarga.png"), @record.youtube_link, :class => 'frame'
+      - if @record.spotify_link.present?
+        = link_to (image_tag "descarga.png"), @record.spotify_link, :class => 'frame'    
 
   .separator
-
-  = render partial: 'lyrics'
+  - if @songs.present?
+    = render partial: 'lyrics'
