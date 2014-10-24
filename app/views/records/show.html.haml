@@ -19,5 +19,4 @@
         = link_to (image_tag "descarga.png"), @record.spotify_link, :class => 'frame'    
 
   .separator
-  - if @songs.present?
-    = render partial: 'lyrics'
+  = render partial: 'lyrics' if @songs.present? || current_admin.present?
