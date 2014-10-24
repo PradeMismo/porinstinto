@@ -1,8 +1,7 @@
 %article.post
-  - if current_admin.present?
-    - if @band_photo.present?
-      = link_to "Editar", edit_band_photo_path(@band_photo), :class => "button blue" 
+  - if @band_photo.present?
+    - if current_admin.present?
       = link_to "Borrar", @band_photo, :method => :delete, :class => "button red"
-      .center= image_tag @band_photo.photo.url(:band), :class => 'frame'
-    - else
-      = link_to "Nueva foto de la banda", new_band_photo_path, :class => "button green hover"
+    .center= image_tag @band_photo.photo.url(:band), :class => 'frame'
+  - elsif current_admin.present?
+    = link_to "Nueva foto de la banda", new_band_photo_path, :class => "button green hover"
