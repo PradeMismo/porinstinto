@@ -13,4 +13,9 @@ class Record < ActiveRecord::Base
   scope :studio, where(own: true)
   scope :compilation, where(own: false)
 
+  def get_spotify_url
+    spotify_id = spotify_link[-22..-1]
+    return "https://embed.spotify.com/?uri=spotify:album:" + spotify_id
+  end
+
 end
