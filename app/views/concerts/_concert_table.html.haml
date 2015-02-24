@@ -28,4 +28,4 @@
         - if current_admin.present? 
           %td
             = link_to "Editar", edit_concert_path(concert), :class => "button blue" 
-            = link_to "Borrar", concert, :method => :delete, :class => "button red"
+            = link_to "Borrar", concert, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"

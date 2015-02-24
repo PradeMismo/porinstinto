@@ -4,19 +4,19 @@
     - if current_admin.present?
       .right 
         = link_to "Editar", edit_record_path(@record), :class => "button blue" 
-        = link_to "Borrar", @record, :method => :delete, :class => "button red"
-        = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
+        = link_to "Borrar", @record, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
+        = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
     %h2= @record.name 
 
     %p= @record.description
 
     .center
       - if @record.download_link.present?
-        = link_to (image_tag "descarga.png"), @record.download_link, :class => 'frame'
+        = link_to (image_tag "descarga.png"), @record.download_link, target: "_blank", :class => 'frame'
       - if @record.youtube_link.present?
-        = link_to (image_tag "descarga.png"), @record.youtube_link, :class => 'frame'
+        = link_to (image_tag "youtube.png"), @record.youtube_link, target: "_blank", :class => 'frame'
       - if @record.spotify_link.present?
-        = link_to (image_tag "descarga.png"), @record.spotify_link, :class => 'frame'    
+        = link_to (image_tag "spotify.png"), @record.spotify_link, target: "_blank", :class => 'frame'    
 
   .separator
   = render partial: 'lyrics' if @songs.present? || current_admin.present?

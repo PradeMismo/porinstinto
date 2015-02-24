@@ -4,7 +4,7 @@
     - if current_admin.present? 
       .right
         = link_to "Editar", edit_entry_path(entry), :class => "button blue" 
-        = link_to "Borrar", entry, :method => :delete, :class => "button red"
+        = link_to "Borrar", entry, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
 
     %h3= entry.title
     .blog-links
@@ -25,7 +25,7 @@
       .center
         %iframe{:frameborder => "0", :height => "315", :src => entry.youtube_embeed, :width => "420"}
 
-    .right= link_to "Ver más", entry.external_link, :method => :delete, :class => "button black" if entry.external_link.present?
+    .right= link_to "Ver más", entry.external_link, target: "_blank", :class => "button black" if entry.external_link.present?
 
   .separator
 

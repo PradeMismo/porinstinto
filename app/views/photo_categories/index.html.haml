@@ -2,9 +2,10 @@
   - if current_admin.present? 
     .right
       = link_to "Nueva categtoría", new_photo_category_path, :class => "button green hover"
-      = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
+      = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
 
-  %h2="fotos" 
+  %h2="fotos"
+  %br 
 
 .gallery_index
   - @categories.each do |category|

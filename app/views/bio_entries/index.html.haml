@@ -3,7 +3,7 @@
     - if current_admin.present?
       .right 
         = link_to "Nuevo capítulo", new_bio_entry_path, :class => "button green hover"
-        = link_to "Log out", destroy_admin_session_path, :method => :delete, :class => "button black"
+        = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
     %h2= "Biografía"
 
     #tabs
@@ -17,7 +17,7 @@
             - if current_admin.present?
               .right 
                 = link_to "Editar", edit_bio_entry_path(entry), :class => "button blue" 
-                = link_to "Borrar", entry, :method => :delete, :class => "button red"
+                = link_to "Borrar", entry, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
             %p
               %strong= "Capítulo " + entry.chapter_order.to_s + ": " + entry.title        
             %p= simple_format entry.content
