@@ -21,6 +21,8 @@ WebPi::Application.routes.draw do
   resources :band_photos, except: [:index, :show]
   resources :bio_entries, except: [:show]
   resources :members, except: [:index, :show]
+  resources :shop_items, except: [:index, :show]
+  resources :orders, only: [:new, :create]
 
   resources :records do
     resources :songs, only: [:new, :create, :update]
