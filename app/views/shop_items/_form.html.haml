@@ -1,0 +1,26 @@
+= simple_form_for @shop_item, :html=> { id: 'form' } do |f|
+  .form-group
+    = f.label "Nombre:"
+    %br
+    = f.input :name, label: false, required: true
+  .form-group
+    = f.label "Precio:"
+    %br
+    = f.input :price, label: false, required: true
+  .form-group
+    = f.label "Relevancia:"
+    %br
+    = f.input :relevance, label: false, required: true
+  .form-group
+    = f.label "Descripción:"
+    %br
+    = f.input :description, label: false, required: true
+  .form-group
+    = f.label "Link externo de compra:"
+    %br
+    = f.input :external_shop_link, label: false 
+  .form-group
+    = f.label "Imagen:"
+    %br
+    = f.file_field :image, label: false
+  = f.button :submit
