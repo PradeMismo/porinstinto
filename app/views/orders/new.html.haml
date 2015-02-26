@@ -1,0 +1,14 @@
+%article.post
+  - if current_admin.present? 
+    .right
+      = link_to "Nuevo artículo", new_shop_item_path, :class => "button green hover"
+      = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+
+  %h2="tienda"
+  %br
+  %strong= "No hacemos esto por dinero, pero si nos apoyas, podremos seguir haciendo nuestra música, más y mejor. ¡Siéntete libre de colaborar con nosotros!" 
+  %br
+  %br
+  %strong= "Elige los artículos que te interesen en la tabla y rellena tus datos personales, nos pondremos en contacto contigo lo antes posible. Los gastos de envío seran gratuitos en la mayoría de los casos, de no ser así, te lo diremos en la confirmación del pedido. Si tienes alguna otra duda o consulta, escríbenos desde la sección de contacto."
+
+  = render partial: 'item_table', locals: {items: @shop_items} if @shop_items.present?

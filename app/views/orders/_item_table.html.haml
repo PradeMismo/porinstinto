@@ -1,0 +1,59 @@
+= simple_form_for @order, :html => { id: 'form' } do |f|  
+
+  %table
+    %thead
+      %tr
+        %th= "Producto"
+        %th= "Descripción"      
+        %th= "Precio"
+        %th= "Comprar"
+        - if current_admin.present? 
+          %th= "Acciones" 
+
+    %tbody
+      - items.each do |item|
+        %tr
+          %td
+            %a{"data-lightbox" => item.name, :href => item.image.url, "data-title" => item.name, :class => 'zoom'}
+              = image_tag item.image.url(:cover), :class => 'frame'          
+          %td
+            %strong= item.name
+            %br
+            = item.description
+          %td= item.price.to_s + " €"
+
+          - if item.external_shop_link.present?
+            %td= link_to "Comprar en tienda externa", item.external_shop_link, target: "_blank", :class => "button blue"
+          -else
+            %td
+              = check_box_tag :shop_items, (item.name + " (" + item.price.to_s + " €)"), false, name: "shop_items[]"
+              %strong= "Añadir"
+
+          - if current_admin.present? 
+            %td
+              = link_to "Editar", edit_shop_item_path(item), :class => "button blue" 
+              = link_to "Borrar", item, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
+
+  %br
+  .form-group
+    = f.label "Tu nombre:"
+    %br
+    = f.input :name, label: false, :required => true, :required => true
+  .form-group
+    = f.label "Tu e-mail:"
+    %br
+    = f.input :email, label: false, :required => true, :required => true
+  .form-group
+    = f.label "Tu teléfono:"
+    %br
+    = f.input :phone, label: false, :required => true, :required => true
+  .form-group
+    = f.label "Tu dirección:"
+    %br
+    = f.input :address, label: false, :required => true, :required => true    
+  .form-group
+    = f.label "Comentarios:"
+    %br
+    = f.input :message, label: false, :as => :text
+    
+  = f.button :submit, 'Enviar pedido'
