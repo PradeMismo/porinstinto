@@ -56,4 +56,8 @@ gem 'devise'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'gon'
 gem 'will_paginate', '~> 3.0.5'
+
+# Gems for contacts and orders
 gem 'mail_form'
+gem 'validates_email_format_of', '1.5.3'
+gem 'phony_rails'
