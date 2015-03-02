@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150225122426) do
+ActiveRecord::Schema.define(:version => 20150226091058) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -168,10 +168,26 @@ ActiveRecord::Schema.define(:version => 20150225122426) do
     t.string   "url"
   end
 
+  create_table "songs_votes", :id => false, :force => true do |t|
+    t.integer "song_id"
+    t.integer "vote_id"
+  end
+
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "votes", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "province"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "votes", ["province"], :name => "index_votes_on_province"
 
 end
