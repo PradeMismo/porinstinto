@@ -3,6 +3,8 @@ class VotesController < ApplicationController
 
   def index
     @votes = Vote.paginate(:page => params[:page], :per_page => 25)
+    @unsorted_songs = Song.all
+    @songs = @unsorted_songs.sort_by{|song| song.votes.count}.reverse
   end
 
   def new

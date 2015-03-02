@@ -4,7 +4,7 @@
       = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
 
 %h2="canciones por votos"
-= render partial: 'song_vote_table'
+= render partial: 'song_vote_table', locals: {songs: @songs}
 
 .separator
 

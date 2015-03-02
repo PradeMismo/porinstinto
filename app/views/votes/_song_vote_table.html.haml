@@ -5,7 +5,7 @@
       %th= "Votos"
 
   %tbody
-    - Song.all.each do |song|
+    - songs.each do |song|
       %tr
         %td= song.name
         %td= song.votes.count
