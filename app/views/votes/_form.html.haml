@@ -1,0 +1,27 @@
+= simple_form_for @vote, :html => { id: 'form'} do |f|
+  
+  - Record.studio.each do |record|
+    %strong= f.label "Tus canciones favoritas de " + record.name + ":"
+    - record.songs.each do |song|
+      .div
+        = check_box_tag "vote[song_ids][]", song.id, @vote.songs.include?(song) 
+        = song.name
+
+  .form-group
+    = f.label "Tu nombre:"
+    %br
+    = f.input :name, label: false, :required => true
+  .form-group
+    = f.label "Tu e-mail:"
+    %br
+    = f.input :email, label: false, :required => true
+  .form-group
+    = f.label "Tu provincia:"   
+    %br
+    = f.input :province, label: false, collection: @provinces, :include_blank => "(vivo fuera de España)"
+  .form-group
+    = f.label "Comentarios:"
+    %br
+    = f.input :comment, label: false, :as => :text
+
+  = f.button :submit, 'Participar'

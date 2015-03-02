@@ -1,0 +1,11 @@
+%table
+  %thead
+    %tr
+      %th= "Canción"      
+      %th= "Votos"
+
+  %tbody
+    - Song.all.each do |song|
+      %tr
+        %td= song.name
+        %td= song.votes.count
