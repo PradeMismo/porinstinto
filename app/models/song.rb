@@ -1,7 +1,8 @@
 class Song < ActiveRecord::Base
-  attr_accessible :name, :lyrics, :track_order, :music_file, :url
+  attr_accessible :name, :lyrics, :track_order, :music_file, :url, :vote_ids
 
   has_attached_file :music_file, dependent: :destroy
+  has_and_belongs_to_many :votes
 
   validates_presence_of :name, :lyrics, :track_order, :record_id
   validates_attachment_presence :music_file
