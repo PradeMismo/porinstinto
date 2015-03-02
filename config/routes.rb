@@ -23,6 +23,7 @@ WebPi::Application.routes.draw do
   resources :members, except: [:index, :show]
   resources :shop_items, except: [:index, :show]
   resources :orders, only: [:new, :create]
+  resources :votes, except: [:edit, :update]
 
   resources :records do
     resources :songs, only: [:new, :create, :update]
