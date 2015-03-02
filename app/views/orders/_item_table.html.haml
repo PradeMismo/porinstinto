@@ -23,7 +23,7 @@
           %td= item.price.to_s + " €"
 
           - if item.external_shop_link.present?
-            %td= link_to "Comprar en tienda externa", item.external_shop_link, target: "_blank", :class => "button blue"
+            %td= link_to "Comprar en tienda externa", item.external_shop_link, target: "_blank", :class => "button yellow"
           -else
             %td
               = check_box_tag :shop_items, (item.name + " (" + item.price.to_s + " €)"), false, name: "shop_items[]"
