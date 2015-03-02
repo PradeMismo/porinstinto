@@ -18,12 +18,12 @@ $(function() {
   $( "#accordion" ).accordion({ animated: 'bounceslide' });
 });
 
-$(function (){
-    $('iframe').each(function(){
-      var url = $(this).attr("src")
-      $(this).attr("src",url+"?wmode=transparent")
-      });
-});
+// $(function (){
+//     $('iframe').each(function(){
+//       var url = $(this).attr("src")
+//       $(this).attr("src",url+"?wmode=transparent")
+//       });
+// });
 
 $(function(){
     $('.scroll').bind('click',function(event){
