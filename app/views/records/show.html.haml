@@ -12,11 +12,11 @@
 
     .center
       - if @record.download_link.present?
-        = link_to (image_tag "descarga.png"), @record.download_link, target: "_blank", :class => 'frame'
+        = link_to image_tag("descarga.png", size: "160x69"), @record.download_link, target: "_blank", :class => 'frame'
       - if @record.youtube_link.present?
-        = link_to (image_tag "youtube.png"), @record.youtube_link, target: "_blank", :class => 'frame'
+        = link_to image_tag("youtube.png", size: "160x69"), @record.youtube_link, target: "_blank", :class => 'frame'
       - if @record.spotify_link.present?
-        = link_to (image_tag "spotify.png"), @record.spotify_link, target: "_blank", :class => 'frame'    
+        = link_to image_tag("spotify.png", size: "160x69"), @record.spotify_link, target: "_blank", :class => 'frame'    
 
   .separator
   = render partial: 'lyrics' if @songs.present? || current_admin.present?
