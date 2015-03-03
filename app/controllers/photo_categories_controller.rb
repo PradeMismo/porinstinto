@@ -7,7 +7,7 @@ class PhotoCategoriesController < ApplicationController
 
   def show
     @category = PhotoCategory.find(params[:id])
-    @images = @category.images
+    @images = @category.images.paginate(:page => params[:page], :per_page => 12)
     flash.now[:info] = "Actualmente no hay fotos en este album" unless @images.present?
   end
 

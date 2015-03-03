@@ -16,3 +16,6 @@
 
       %a{"data-lightbox" => @category.title, :href => image.photo.url, "data-title" => image.description, :class => 'zoom'}
         = image_tag image.photo.url(:cover), :class => 'shadow'
+
+.separator
+= will_paginate @images 
