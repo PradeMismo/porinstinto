@@ -67,7 +67,7 @@ module WebPi
       :port                 => 587,
       :domain               => "gmail.com",
       :user_name            => "porinstintogrupo@gmail.com",
-      :password             => "123VamosY@",
+      :password             => "PiManager14",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }
