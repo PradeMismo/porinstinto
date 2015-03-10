@@ -28,13 +28,11 @@ WebPi::Application.routes.draw do
   resources :records do
     resources :songs, only: [:new, :create, :update]
   end
-
   resources :songs, only: [:edit, :destroy]
 
   resources :photo_categories do
     resources :images, only: [:new, :create, :update]
   end
-
   resources :images, only: [:edit, :destroy]
 
   # Sample resource route with options:
