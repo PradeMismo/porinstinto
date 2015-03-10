@@ -1,15 +1,17 @@
 class Order < MailForm::Base
-
   attribute :name
   attribute :email
-  attribute :phone
-  attribute :address     
   attribute :message
+  attribute :phone_number
+  attribute :address     
   attribute :items
+  attribute :nickname,  :captcha  => true
 
-  validates_presence_of :name, :email, :message
+  validates_presence_of :name, :email, :address
   validates_email_format_of :email
-  validates_plausible_phone :phone
+  validates :phone_number,:presence => true,
+            :numericality => true,
+            :length => { :minimum => 6, :maximum => 9 }
 
   def headers
     {
