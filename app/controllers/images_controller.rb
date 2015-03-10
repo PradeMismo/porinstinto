@@ -21,12 +21,12 @@ class ImagesController < ApplicationController
 
   def edit
     @image = Image.find(params[:id])
-    @category = @image.category
+    @category = @image.photo_category
   end
 
   def update
     @image = Image.find(params[:id])
-    @category = @image.category
+    @category = @image.photo_category
     if @image.update_attributes(params[:image])
       flash[:success] = "Image succesfully updated"
       redirect_to @category
@@ -39,7 +39,7 @@ class ImagesController < ApplicationController
 
   def destroy
     @image = Image.find(params[:id])
-    @category = @image.category
+    @category = @image.photo_category
     @image.destroy
     flash[:success] = 'Image deleted'
     redirect_to @category
