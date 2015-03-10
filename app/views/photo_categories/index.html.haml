@@ -11,7 +11,7 @@
   - @categories.each do |category|
     %li
       .box
-        = image_tag category.photo.url(:cover), :class => 'cover'
+        = link_to image_tag(category.photo.url(:cover), :class => 'cover'), photo_category_path(category)
         %h3= category.title 
         %p
-          %strong= link_to "Ver más", photo_category_path(category)
+          %strong= link_to "Ver fotos", photo_category_path(category)
