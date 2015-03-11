@@ -1,8 +1,4 @@
 %ul#nav
-  - if current_admin.present? 
-    .right
-      = link_to "Editar Slider", slides_path, :class => "button blue"
-
   %li.primary-menu
     %a= link_to "Inicio", entries_path
   %li.primary-menu
@@ -20,3 +16,7 @@
   - if current_admin.present?  
     %li.primary-menu
       %a= link_to "Votaciones", votes_path
+
+- if current_admin.present? 
+  .right
+    = link_to "Editar Slider", slides_path, :class => "button blue"
