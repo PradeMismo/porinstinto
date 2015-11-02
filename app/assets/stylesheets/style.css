@@ -1,5 +1,10 @@
 /* ================= FONTS ====================== */
 
+@font-face {
+    font-family: 'Ubuntu Condensed';
+    src: url(/assets/Ubuntu-C.ttf) format("truetype");
+}
+
 /* Content font */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
