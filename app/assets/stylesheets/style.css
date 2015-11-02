@@ -2,8 +2,12 @@
 
 @font-face {
     font-family: 'Ubuntu Condensed';
-    src: url(/assets/Ubuntu-C.ttf) format("truetype");
+    src: url(font-path('ubuntu-c-webfont.eot') + "?#iefix") format('embedded-opentype'),
+         url(font-path('ubuntu-c-webfont.woff')) format('woff'), 
+         url(font-path('ubuntu-c-webfont.ttf'))  format('truetype'),
+         url(font-path('ubuntu-c-webfont.svg') + "#Ubuntu Condensed") format('svg');
 }
+
 
 /* Content font */
 body {
