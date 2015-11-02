@@ -8,8 +8,8 @@ require 'capistrano/deploy'
 #
 require 'capistrano/bundler'
 require 'capistrano/rails'
-require 'capistrano/rails/assets'
-require 'capistrano/rails/migrations'
+# require 'capistrano/rails/assets'
+# require 'capistrano/rails/migrations'
 
 require 'capistrano/rvm'
 set :rvm_type, :user
