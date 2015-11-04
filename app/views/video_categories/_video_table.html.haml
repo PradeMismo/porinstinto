@@ -1,0 +1,18 @@
+%h2= category.title
+%br
+
+.gallery_index
+  - category.videos.each do |video|
+    %li
+      .box
+        = link_to image_tag(video.thumbnail_url, :class => 'cover'), video_path(video)
+        %h3= video.title 
+        %p
+          %strong= link_to "Ver video", video_path(video)
+
+- if current_admin.present?
+  = link_to "Nuevo vídeo", new_video_category_video_path(category), :class => "button green hover" 
+  = link_to "Editar", edit_video_category_path(category), :class => "button blue" 
+  = link_to "Borrar", category, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
+%br
+.separator

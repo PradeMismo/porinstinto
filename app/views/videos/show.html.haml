@@ -1,0 +1,12 @@
+%article.post
+  - if current_admin.present?
+    .right
+      = link_to "Editar", edit_video_path(@video), :class => "button blue" 
+      = link_to "Borrar", @video, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
+  %h2= @video.title
+  %br
+
+  .center
+    %iframe{:frameborder => "0", :height => "315", :src => @video.youtube_embeed, :width => "560"}
+
+  %p= @video.description

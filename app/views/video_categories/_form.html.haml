@@ -1,0 +1,6 @@
+= simple_form_for @category, :html=> { id: 'form' } do |f|
+  .form-group
+    = f.label "Título:"
+    %br
+    = f.input :title, label: false, required: true
+  = f.button :submit
