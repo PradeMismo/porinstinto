@@ -35,6 +35,11 @@ WebPi::Application.routes.draw do
   end
   resources :images, only: [:edit, :destroy]
 
+  resources :video_categories do
+    resources :videos, only: [:new, :create, :update]
+  end
+  resources :videos, only: [:show, :edit, :destroy]
+
   # Sample resource route with options:
   #   resources :products do
   #     member do
