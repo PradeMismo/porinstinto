@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
 
   def index
-    @entries = Entry.paginate(:page => params[:page], :per_page => 5)
+    @entries = Entry.paginate(:page => params[:page], :per_page => 4)
     @next_concert = Concert.next.order("date ASC").first
     @songs = Song.all.shuffle[0..8]
     gon.songs = @songs
