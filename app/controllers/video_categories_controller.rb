@@ -2,6 +2,11 @@ class VideoCategoriesController < ApplicationController
 
   def index
     @categories= VideoCategory.all
+    @videos = Hash.new {}
+    @categories.each do |category|
+      videos_paginated = category.videos.paginate(:page => params[eval(":page"+category.id.to_s)], :per_page => 3)  
+      @videos[category.id] = videos_paginated
+    end
     flash.now[:info] = "Actualmente no hay videos disponibles" unless @categories.present?
   end
 

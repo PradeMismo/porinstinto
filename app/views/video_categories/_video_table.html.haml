@@ -2,14 +2,14 @@
 %br
 
 .gallery_index
-  - category.videos.each do |video|
+  - @videos[category.id].each do |video|
     %li
       .box
         = link_to image_tag(video.thumbnail_url, :class => 'cover'), video_path(video)
         %h3= video.title 
         %p
           %strong= link_to "Ver video", video_path(video)
-
+  = will_paginate @videos[category.id], :param_name => "page" + category.id.to_s       
 - if current_admin.present?
   = link_to "Nuevo vídeo", new_video_category_video_path(category), :class => "button green hover" 
   = link_to "Editar", edit_video_category_path(category), :class => "button blue" 
