@@ -3,8 +3,8 @@ class Concert < ActiveRecord::Base
 
   validates_presence_of :date, :place, :concert_hall, :tickets 
 
-  scope :previous, where("date <= ? ", DateTime.now)
-  scope :next, where("date > ? ", DateTime.now)
+  scope :previous, lambda { where("date <= ? ", DateTime.now) }
+  scope :next, lambda { where("date > ? ", DateTime.now) }
 
   def info
     results = ""
