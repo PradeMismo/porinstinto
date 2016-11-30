@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.6.1'
 
 set :application, 'porinstinto'
 set :repo_url, 'git@github.com:PradeMismo/porinstinto.git'
