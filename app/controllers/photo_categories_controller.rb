@@ -1,25 +1,24 @@
 class PhotoCategoriesController < ApplicationController
+  load_and_authorize_resource
 
   def index
-    @categories= PhotoCategory.all
-    flash.now[:info] = "Actualmente no hay fotos disponibles" unless @categories.present?
+    @photo_categories= PhotoCategory.all
+    flash.now[:info] = "Actualmente no hay fotos disponibles" unless @photo_categories.present?
   end
 
   def show
-    @category = PhotoCategory.find(params[:id])
-    @images = @category.images.paginate(:page => params[:page], :per_page => 12)
+    @images = @photo_category.images.paginate(:page => params[:page], :per_page => 12)
     flash.now[:info] = "Actualmente no hay fotos en este album" unless @images.present?
   end
 
 
   def new
-    @category = PhotoCategory.new
     flash.now[:tip] = "Adjunta una imagen de 300x180"  
   end 
 
   def create
-    @category = PhotoCategory.new(params[:photo_category])
-    if @category.save
+    @photo_category = PhotoCategory.new(photo_category_params)
+    if @photo_category.save
       flash[:success] = "PhotoCategory succesfully created"
       redirect_to photo_categories_path
     else 
@@ -30,12 +29,10 @@ class PhotoCategoriesController < ApplicationController
 
 
   def edit
-    @category = PhotoCategory.find(params[:id])
   end
 
   def update
-    @category = PhotoCategory.find(params[:id])
-    if @category.update_attributes(params[:photo_category])
+    if @photo_category.update_attributes(photo_category_params)
       flash[:success] = "PhotoCategory succesfully updated"
       redirect_to photo_categories_path
     else
@@ -46,9 +43,15 @@ class PhotoCategoriesController < ApplicationController
 
 
   def destroy
-    @category = PhotoCategory.find(params[:id])
-    @category.destroy
+    @photo_category.destroy
     flash[:success] = 'PhotoCategory deleted'
     redirect_to photo_categories_path
   end
+
+
+  private
+
+  def photo_category_params
+    params.require(:photo_category).permit(:title, :photo)
+  end  
 end

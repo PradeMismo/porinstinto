@@ -1,6 +1,4 @@
 class Song < ActiveRecord::Base
-  attr_accessible :name, :lyrics, :track_order, :music_file, :url, :vote_ids
-
   has_attached_file :music_file, dependent: :destroy
   has_and_belongs_to_many :votes
 
@@ -10,7 +8,7 @@ class Song < ActiveRecord::Base
 
   belongs_to :record
 
-  default_scope order('track_order ASC')
+  default_scope  { order(:track_order => :desc) }
 
   before_validation :set_file_url
 
@@ -19,5 +17,4 @@ class Song < ActiveRecord::Base
   def set_file_url
     self.url = music_file.url
   end
-
 end

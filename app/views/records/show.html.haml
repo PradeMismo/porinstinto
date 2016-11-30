@@ -1,11 +1,11 @@
 = render partial: 'record_left_sidebar'
 .grid_8
   %article.post
-    - if current_admin.present?
+    - if current_user.try(:admin?)
       .right 
         = link_to "Editar", edit_record_path(@record), :class => "button blue" 
         = link_to "Borrar", @record, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
-        = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+        = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
     %h2= @record.name 
 
     %p= @record.description
@@ -19,4 +19,4 @@
         = link_to image_tag("spotify.png", size: "160x69"), @record.spotify_link, target: "_blank", :class => 'frame'    
 
   .separator
-  = render partial: 'lyrics' if @songs.present? || current_admin.present?
+  = render partial: 'lyrics' if @songs.present? || current_user.try(:admin?)

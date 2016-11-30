@@ -7,7 +7,7 @@
         %th= "Descripción"      
         %th= "Precio"
         %th= "Comprar"
-        - if current_admin.present? 
+        - if current_user.try(:admin?) 
           %th= "Acciones" 
 
     %tbody
@@ -29,7 +29,7 @@
               = check_box_tag :shop_items, (item.name + " (" + item.price.to_s + " €)"), false, name: "shop_items[]"
               %strong= "Añadir"
 
-          - if current_admin.present? 
+          - if current_user.try(:admin?) 
             %td
               = link_to "Editar", edit_shop_item_path(item), :class => "button blue" 
               = link_to "Borrar", item, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"

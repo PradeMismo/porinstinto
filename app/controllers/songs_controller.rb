@@ -1,15 +1,15 @@
 class SongsController < ApplicationController
+  load_and_authorize_resource
 
   def new
     @record = Record.find(params[:record_id])    
-    @song = Song.new
     flash.now[:tip] = "Adjunta un fichero de audio .ogg"    
   end 
 
   def create
     @record = Record.find(params[:record_id])    
-    @song = @record.songs.new(params[:song])
-
+    @song = @record.songs.new(song_params)
+#throw @song
     if @song.save
       flash[:success] = "Song succesfully created"
       redirect_to @record
@@ -21,14 +21,12 @@ class SongsController < ApplicationController
 
 
   def edit
-    @song = Song.find(params[:id])
     @record = @song.record
   end
 
   def update
-    @song = Song.find(params[:id])
     @record = @song.record
-    if @song.update_attributes(params[:song])
+    if @song.update_attributes(song_params)
       flash[:success] = "Song succesfully updated"
       redirect_to @record
     else
@@ -39,11 +37,16 @@ class SongsController < ApplicationController
 
 
   def destroy
-    @song = Song.find(params[:id])
     @record = @song.record
     @song.destroy
     flash[:success] = 'Song deleted'
     redirect_to @record
   end
   
+
+  private
+
+  def song_params
+    params.require(:song).permit(:name, :lyrics, :track_order, :music_file, :url)
+  end  
 end

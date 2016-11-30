@@ -2,10 +2,10 @@
 
 .grid_8
   %article.post
-    - if current_admin.present? 
+    - if current_user.try(:admin?) 
       .right
         = link_to "Nueva entrada", new_entry_path, :class => "button green hover"
-        = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+        = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
 
     %h2="Noticias" 
     

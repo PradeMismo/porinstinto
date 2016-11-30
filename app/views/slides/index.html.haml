@@ -1,6 +1,6 @@
 .right
   = link_to "Nuevo slide", new_slide_path, :class => "button green hover" if (@slides.count < 4)
-  = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+  = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
 
 %h2="slides" 
 

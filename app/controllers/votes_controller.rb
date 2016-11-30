@@ -1,5 +1,5 @@
 class VotesController < ApplicationController
-  before_filter :authorize, only: [:index]
+  load_and_authorize_resource
 
   def index
     @votes = Vote.paginate(:page => params[:page], :per_page => 25)
@@ -8,14 +8,13 @@ class VotesController < ApplicationController
   end
 
   def new
-    @vote = Vote.new
     @provinces = Provincias.all
     @songs_first = Record.studio.first.songs
     @songs_second = Record.studio.last.songs
   end 
 
   def create
-    @vote = Vote.new(params[:vote])
+    @vote = Vote.new(vote_params)
     if @vote.save
       flash[:success] = 'Gracias por participar! Te informaremos si resultas ganador.'
       redirect_to entries_path
@@ -25,13 +24,10 @@ class VotesController < ApplicationController
     end
   end
 
+
   private
 
-  def authorize
-    unless current_admin.present? 
-      flash[:error] = 'Acceso denegado'
-      redirect_to entries_path
-    end
+  def vote_params
+    params.require(:vote).permit(:name, :email, :province, :comment, :song_ids)
   end
-
 end

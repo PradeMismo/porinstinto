@@ -7,7 +7,7 @@
       %th= "Hora"
       %th= "Entrada"
       %th= "Info"
-      - if current_admin.present? 
+      - if current_user.try(:admin?) 
         %th= "Acciones" 
 
   %tbody
@@ -25,7 +25,7 @@
           %td= link_to concert.info, concert.event_link, target: "_blank"
         - else
           %td= concert.info
-        - if current_admin.present? 
+        - if current_user.try(:admin?) 
           %td
             = link_to "Editar", edit_concert_path(concert), :class => "button blue" 
             = link_to "Borrar", concert, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"

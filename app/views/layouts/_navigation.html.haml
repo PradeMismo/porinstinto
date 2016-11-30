@@ -15,10 +15,10 @@
     %a= link_to "Contacto", new_contact_path
   %li.primary-menu
     %a= link_to "Tienda", new_order_path
-  - if current_admin.present?  
+  - if current_user.try(:admin?)  
     %li.primary-menu
       %a= link_to "Votaciones", votes_path
 
-- if current_admin.present? 
+- if current_user.try(:admin?) 
   .right
     = link_to "Editar Slider", slides_path, :class => "button blue"

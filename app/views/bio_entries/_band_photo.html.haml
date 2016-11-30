@@ -1,9 +1,9 @@
 %article.post
   - if @band_photo.present?
-    - if current_admin.present?
+    - if current_user.try(:admin?)
       = link_to "Borrar", @band_photo, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
     .center  
       %a{"data-lightbox" => "Por Instinto", :href => @band_photo.photo.url, "data-title" => "Por Instinto", :class => 'zoom'}
         = image_tag @band_photo.photo.url(:band), :class => 'frame'
-  - elsif current_admin.present?
+  - elsif current_user.try(:admin?)
     = link_to "Nueva foto de la banda", new_band_photo_path, :class => "button green hover"

@@ -6,7 +6,7 @@
       %th= "mail"
       %th= "canciones"
       %th= "comentario"
-      - if current_admin.present? 
+      - if current_user.try(:admin?) 
         %th= "Acciones" 
 
   %tbody
@@ -20,6 +20,6 @@
         %td= vote.email
         %td= vote.songs.collect(&:name).join(', ')
         %td= vote.comment
-        - if current_admin.present? 
+        - if current_user.try(:admin?) 
           %td
             = link_to "Borrar", vote, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"

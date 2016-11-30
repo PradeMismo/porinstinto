@@ -1,4 +1,5 @@
 class ConcertsController < ApplicationController
+  load_and_authorize_resource
 
   def index
     @next_concerts = Concert.next.order("date ASC")
@@ -8,12 +9,10 @@ class ConcertsController < ApplicationController
 
 
   def new
-    @concert = Concert.new  
   end 
 
   def create
-    @concert = Concert.new(params[:concert])
-
+    @concert = Concert.new(concert_params)
     if @concert.save
       flash[:success] = "Concert succesfully created"
       redirect_to concerts_path
@@ -25,12 +24,10 @@ class ConcertsController < ApplicationController
 
 
   def edit
-    @concert = Concert.find(params[:id])
   end
 
   def update
-    @concert = Concert.find(params[:id])
-    if @concert.update_attributes(params[:concert])
+    if @concert.update_attributes(concert_params)
       flash[:success] = "Concert succesfully updated"
       redirect_to concerts_path
     else
@@ -41,10 +38,15 @@ class ConcertsController < ApplicationController
 
 
   def destroy
-    @concert = Concert.find(params[:id])
     @concert.destroy
     flash[:success] = 'Concert deleted'
     redirect_to concerts_path
   end
 
+
+  private
+
+  def concert_params
+    params.require(:concert).permit(:date, :place, :concert_hall, :tickets, :bands, :notes, :event_link, :ticket_link)
+  end
 end

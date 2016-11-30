@@ -1,35 +1,32 @@
 class ImagesController < ApplicationController
+  load_and_authorize_resource
 
   def new
-    @category = PhotoCategory.find(params[:photo_category_id])    
-    @image = Image.new  
+    @photo_category = PhotoCategory.find(params[:photo_category_id])    
   end 
 
   def create
-    @category = PhotoCategory.find(params[:photo_category_id])    
-    @image = @category.images.new(params[:image])
-
+    @photo_category = PhotoCategory.find(params[:photo_category_id])    
+    @image = @photo_category.images.new(image_params)
     if @image.save
       flash[:success] = "Image succesfully created"
-      redirect_to @category
+      redirect_to @photo_category
     else
       flash[:error] = "Error: image couldn't be created"
-      redirect_to @category
+      redirect_to @photo_category
     end
   end
 
 
   def edit
-    @image = Image.find(params[:id])
-    @category = @image.photo_category
+    @photo_category = @image.photo_category
   end
 
   def update
-    @image = Image.find(params[:id])
-    @category = @image.photo_category
-    if @image.update_attributes(params[:image])
+    @photo_category = @image.photo_category
+    if @image.update_attributes(image_params)
       flash[:success] = "Image succesfully updated"
-      redirect_to @category
+      redirect_to @photo_category
     else
       flash[:error] = "Error: image couldn't be updated"
       render action: "edit"
@@ -38,10 +35,16 @@ class ImagesController < ApplicationController
 
 
   def destroy
-    @image = Image.find(params[:id])
-    @category = @image.photo_category
+    @photo_category = @image.photo_category
     @image.destroy
     flash[:success] = 'Image deleted'
-    redirect_to @category
+    redirect_to @photo_category
+  end
+
+
+  private
+
+  def image_params
+    params.require(:image).permit(:photo, :description)
   end
 end

@@ -10,7 +10,7 @@
         %p
           %strong= link_to "Ver video", video_path(video)
   = will_paginate @videos[category.id], :param_name => "page" + category.id.to_s       
-- if current_admin.present?
+- if current_user.try(:admin?)
   = link_to "Nuevo vídeo", new_video_category_video_path(category), :class => "button green hover" 
   = link_to "Editar", edit_video_category_path(category), :class => "button blue" 
   = link_to "Borrar", category, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"

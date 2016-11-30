@@ -1,20 +1,20 @@
 %article.post
-  - if current_admin.present?
+  - if current_user.try(:admin?)
     .right 
-      = link_to "Nueva foto", new_photo_category_image_path(@category), :class => "button green hover"
-      = link_to "Editar", edit_photo_category_path(@category), :class => "button blue" 
-      = link_to "Borrar", @category, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
-      = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
-  %h2= @category.title 
+      = link_to "Nueva foto", new_photo_category_image_path(@photo_category), :class => "button green hover"
+      = link_to "Editar", edit_photo_category_path(@photo_category), :class => "button blue" 
+      = link_to "Borrar", @photo_category, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
+      = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+  %h2= @photo_category.title 
 
 %ul.gallery
   - @images.each do |image|
     %li.grid_4
-      - if current_admin.present?
+      - if current_user.try(:admin?)
         = link_to "Editar", edit_image_path(image), :class => "button blue" 
         = link_to "Borrar", image, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
 
-      %a{"data-lightbox" => @category.title, :href => image.photo.url, "data-title" => image.description, :class => 'zoom'}
+      %a{"data-lightbox" => @photo_category.title, :href => image.photo.url, "data-title" => image.description, :class => 'zoom'}
         = image_tag image.photo.url(:cover), :class => 'shadow'
 
 .separator

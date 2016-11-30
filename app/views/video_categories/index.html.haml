@@ -1,9 +1,9 @@
 %article.post
-  - if current_admin.present? 
+  - if current_user.try(:admin?) 
     .right
       = link_to "Nueva categoría", new_video_category_path, :class => "button green hover"
-      = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+      = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
 
-- @categories.each do |category|
+- @video_categories.each do |category|
   = render partial: 'video_table', locals: {category: category}
   

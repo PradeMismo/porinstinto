@@ -1,24 +1,23 @@
 class VideoCategoriesController < ApplicationController
+  load_and_authorize_resource
 
   def index
-    @categories= VideoCategory.all
+    @video_categories= VideoCategory.all
     @videos = Hash.new {}
-    @categories.each do |category|
+    @video_categories.each do |category|
       videos_paginated = category.videos.paginate(:page => params[eval(":page"+category.id.to_s)], :per_page => 3)  
       @videos[category.id] = videos_paginated
     end
-    flash.now[:info] = "Actualmente no hay videos disponibles" unless @categories.present?
+    flash.now[:info] = "Actualmente no hay videos disponibles" unless @video_categories.present?
   end
 
 
   def new
-    @category = VideoCategory.new
-    flash.now[:tip] = "Adjunta un link a un video de youtube"  
   end 
 
   def create
-    @category = VideoCategory.new(params[:video_category])
-    if @category.save
+    @video_category = VideoCategory.new(video_category_params)
+    if @video_category.save
       flash[:success] = "VideoCategory succesfully created"
       redirect_to video_categories_path
     else 
@@ -29,12 +28,10 @@ class VideoCategoriesController < ApplicationController
 
 
   def edit
-    @category = VideoCategory.find(params[:id])
   end
 
   def update
-    @category = VideoCategory.find(params[:id])
-    if @category.update_attributes(params[:video_category])
+    if @video_category.update_attributes(video_category_params)
       flash[:success] = "VideoCategory succesfully updated"
       redirect_to video_categories_path
     else
@@ -45,9 +42,15 @@ class VideoCategoriesController < ApplicationController
 
 
   def destroy
-    @category = VideoCategory.find(params[:id])
-    @category.destroy
+    @video_category.destroy
     flash[:success] = 'VideoCategory deleted'
     redirect_to video_categories_path
+  end
+  
+
+  private
+
+  def video_category_params
+    params.require(:video_category).permit(:title)
   end
 end

@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  load_and_authorize_resource
 
   def index
     @entries = Entry.paginate(:page => params[:page], :per_page => 4)
@@ -9,14 +10,12 @@ class EntriesController < ApplicationController
 
 
   def new
-    @entry = Entry.new
     @tags = Tag.all
     flash.now[:tip] = "Puedes adjuntar una imagen, link externo o link de youtube"  
   end 
 
   def create
-    @entry = Entry.new(params[:entry])
-
+    @entry = Entry.new(entry_params)
     if @entry.save
       flash[:success] = "Entry succesfully created"
       redirect_to entries_path
@@ -28,13 +27,11 @@ class EntriesController < ApplicationController
 
 
   def edit
-    @entry = Entry.find(params[:id])
     @tags = Tag.all 
   end
 
   def update
-    @entry = Entry.find(params[:id])
-    if @entry.update_attributes(params[:entry])
+    if @entry.update_attributes(entry_params)
       flash[:success] = "Entry succesfully updated"
       redirect_to entries_path
     else
@@ -45,10 +42,15 @@ class EntriesController < ApplicationController
 
 
   def destroy
-    @entry = Entry.find(params[:id])
     @entry.destroy
     flash[:success] = 'Entry deleted'
     redirect_to entries_path
   end
 
+
+  private
+
+  def entry_params
+    params.require(:entry).permit(:title, :publish_date, :content, :youtube_link, :external_link, :tag_id, :photo)
+  end
 end

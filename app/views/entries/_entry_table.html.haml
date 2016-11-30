@@ -1,7 +1,7 @@
 - @entries.each do |entry|
 
   %article.post
-    - if current_admin.present? 
+    - if current_user.try(:admin?) 
       .right
         = link_to "Editar", edit_entry_path(entry), :class => "button blue" 
         = link_to "Borrar", entry, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"

@@ -1,9 +1,9 @@
 .grid_8
   %article.post
-    - if current_admin.present?
+    - if current_user.try(:admin?)
       .right 
         = link_to "Nuevo capítulo", new_bio_entry_path, :class => "button green hover"
-        = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+        = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
     %h2= "Biografía"
 
     #tabs
@@ -14,7 +14,7 @@
       #tabs-container
         - @bio_entries.each do |entry|
           .tabs{:id => entry.tab_container}
-            - if current_admin.present?
+            - if current_user.try(:admin?)
               .right 
                 = link_to "Editar", edit_bio_entry_path(entry), :class => "button blue" 
                 = link_to "Borrar", entry, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"

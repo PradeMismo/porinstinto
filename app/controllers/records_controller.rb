@@ -1,4 +1,5 @@
 class RecordsController < ApplicationController
+  load_and_authorize_resource
 
   def index
     @studio_records = Record.studio
@@ -6,9 +7,8 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id])
     @songs = @record.songs
-    if current_admin.present? 
+    if current_user.try(:admin?) 
       flash.now[:tip] = "Por favor, crea canciones para este disco" unless @songs.present?
     end 
     gon.songs = @songs
@@ -16,13 +16,11 @@ class RecordsController < ApplicationController
 
 
   def new
-    @record = Record.new
     flash.now[:tip] = "Adjunta una imagen de 300x300. Marca la casilla 'own' si es un disco propio de estudio, o en blanco si es un recopilatorio."  
   end 
 
   def create
-    @record = Record.new(params[:record])
-
+    @record = Record.new(record_params)
     if @record.save
       flash[:success] = "Record succesfully created"
       redirect_to records_path
@@ -34,12 +32,10 @@ class RecordsController < ApplicationController
 
 
   def edit
-    @record = Record.find(params[:id])
   end
 
   def update
-    @record = Record.find(params[:id])
-    if @record.update_attributes(params[:record])
+    if @record.update_attributes(record_params)
       flash[:success] = "Record succesfully updated"
       redirect_to records_path
     else
@@ -50,9 +46,15 @@ class RecordsController < ApplicationController
 
 
   def destroy
-    @record = Record.find(params[:id])
     @record.destroy
     flash[:success] = 'Record deleted'
     redirect_to records_path
   end
+  
+
+  private
+
+  def record_params
+    params.require(:record).permit(:name, :publish_date, :description, :download_link, :own, :photo, :youtube_link, :spotify_link)
+  end  
 end

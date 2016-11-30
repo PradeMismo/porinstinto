@@ -1,21 +1,20 @@
 class SlidesController < ApplicationController
+  load_and_authorize_resource
 
   def index
     @slides= Slide.all
   end
 
   def show
-    @slide = Slide.find(params[:id])
   end
 
 
   def new
-    @slide = Slide.new
     flash.now[:tip] = "Adjunta una imagen de 960x350"   
   end 
 
   def create
-    @slide = Slide.new(params[:slide])
+    @slide = Slide.new(slide_params)
     if @slide.save
       flash[:success] = "Slide succesfully created"
       redirect_to slides_path
@@ -27,12 +26,10 @@ class SlidesController < ApplicationController
 
 
   def edit
-    @slide = Slide.find(params[:id])
   end
 
   def update
-    @slide = Slide.find(params[:id])
-    if @slide.update_attributes(params[:slide])
+    if @slide.update_attributes(slide_params)
       flash[:success] = "Slide succesfully updated"
       redirect_to slides_path
     else
@@ -43,9 +40,15 @@ class SlidesController < ApplicationController
 
 
   def destroy
-    @slide = Slide.find(params[:id])
     @slide.destroy
     flash[:success] = 'Slide deleted'
     redirect_to slides_path
+  end
+  
+
+  private
+
+  def slide_params
+    params.require(:slide).permit(:title, :description, :link, :photo, :slide_order)
   end
 end

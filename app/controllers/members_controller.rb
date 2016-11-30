@@ -1,13 +1,12 @@
 class MembersController < ApplicationController
+  load_and_authorize_resource
 
   def new
-    @member = Member.new
     flash.now[:tip] = "Adjunta una imagen de 300x180"  
   end 
 
   def create
-    @member = Member.new(params[:member])
-
+    @member = Member.new(member_params)
     if @member.save
       flash[:success] = "Member succesfully created"
       redirect_to bio_entries_path
@@ -19,12 +18,10 @@ class MembersController < ApplicationController
 
 
   def edit
-    @member = Member.find(params[:id])
   end
 
   def update
-    @member = Member.find(params[:id])
-    if @member.update_attributes(params[:member])
+    if @member.update_attributes(member_params)
       flash[:success] = "Member succesfully updated"
       redirect_to bio_entries_path
     else
@@ -35,9 +32,15 @@ class MembersController < ApplicationController
 
 
   def destroy
-    @member = Member.find(params[:id])
     @member.destroy
     flash[:success] = 'Member deleted'
     redirect_to bio_entries_path
+  end
+
+
+  private
+
+  def member_params
+    params.require(:member).permit(:name, :instrument, :photo)
   end
 end

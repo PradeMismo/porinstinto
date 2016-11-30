@@ -1,9 +1,7 @@
 class Video < ActiveRecord::Base
-  attr_accessible :title, :youtube_link, :description
-
   belongs_to :video_category
 
-  default_scope order("created_at DESC")
+  default_scope  { order(:created_at => :desc) }
 
   validates_presence_of :title, :youtube_link
 

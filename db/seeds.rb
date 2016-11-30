@@ -3,7 +3,7 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 tags = Tag.create([{ name:'Noticias' }, { name:'Conciertos' }, { name:'Música' }])
-admin =  Admin.create(email:'info@porinstinto.com', password:'PiManager14')
+user =  User.create(email:'info@porinstinto.com', password:'PiManager14', admin: true)
 concerts = Concert.create([
               {date: DateTime.new(  2013,4,19  , 22), place:'  Madrid', concert_hall:'  Sala Bar&Co ', tickets:'5€', bands:'   Debruces ', notes:' ', event_link:'  https://www.facebook.com/events/447083582035910/ '},
               {date: DateTime.new(  2013,2,22  , 21), place:'  Vallecas (Madrid) ', concert_hall:'  Sala Hebe ', tickets:'5€', bands:'   Vereda y Ni Media Ni Guarra', notes:' ', event_link:'  https://www.facebook.com/events/444553055617414/444789888927064/?notif_t=plan_mall_activity'}, 

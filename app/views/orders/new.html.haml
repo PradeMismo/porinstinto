@@ -1,8 +1,8 @@
 %article.post
-  - if current_admin.present? 
+  - if current_user.try(:admin?) 
     .right
       = link_to "Nuevo artículo", new_shop_item_path, :class => "button green hover"
-      = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+      = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
 
   %h2="tienda"
   %br

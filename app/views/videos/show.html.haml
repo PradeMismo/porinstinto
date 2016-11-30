@@ -1,5 +1,5 @@
 %article.post
-  - if current_admin.present?
+  - if current_user.try(:admin?)
     .right
       = link_to "Editar", edit_video_path(@video), :class => "button blue" 
       = link_to "Borrar", @video, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"

@@ -1,14 +1,14 @@
 %article.post
-  - if current_admin.present? 
+  - if current_user.try(:admin?) 
     .right
       = link_to "Nueva categoría", new_photo_category_path, :class => "button green hover"
-      = link_to "Log out", destroy_admin_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+      = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
 
   %h2="fotos"
   %br 
 
 .gallery_index
-  - @categories.each do |category|
+  - @photo_categories.each do |category|
     %li
       .box
         = link_to image_tag(category.photo.url(:cover), :class => 'cover'), photo_category_path(category)

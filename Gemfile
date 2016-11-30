@@ -1,61 +1,71 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.2.7.1'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3', group: :development
+# Use postgresql as the database for Active Record
+gem 'pg'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.2'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer',  platforms: :ruby
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
-end
-
+# Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.0'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring',        group: :development
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development do
+  # Deploy with Capistrano
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  # Add this if you're using rvm
+  gem 'capistrano-rvm', github: "capistrano/rvm"
+  
+  gem 'quiet_assets'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
-
-# Add this if you're using rbenv
-# gem 'capistrano-rbenv', github: "capistrano/rbenv"
-
-# Add this if you're using rvm
-gem 'capistrano-rvm', github: "capistrano/rvm"
-
-# To use debugger
-# gem 'debugger'
-
-gem 'haml-rails', '>= 0.3.4'
-gem 'simple_form'
+# Authentication and security
+gem 'cancan'
 gem 'devise'
+gem 'devise_security_extension'
+gem 'devise-i18n'
+
+# View layer haml markup templates
+gem 'haml-rails'
+
+
+# # View gems
+# gem 'bootstrap-sass'
+# gem 'font-awesome-rails'
+
+# gem 'therubyracer'
+
+# # Navigation
+# gem 'simple-navigation'
+# gem 'simple-navigation-bootstrap'
+
+# Form helpers
+gem 'simple_form'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'gon'
-gem 'will_paginate', '~> 3.0.5'
+
+# Pagination
+gem 'will_paginate', '~> 3.1.0'
 
 # Gems for contacts and orders
 gem 'mail_form'

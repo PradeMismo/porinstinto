@@ -1,4 +1,4 @@
-- if current_admin.present?
+- if current_user.try(:admin?)
   .right 
     = link_to "Nueva canción", new_record_song_path(@record), :class => "button green hover"
 
@@ -9,7 +9,7 @@
   - @songs.each do |song|
     %h6= song.track_order.to_s + ". " + song.name        
     %p{:style => "white-space: pre-wrap;"}
-      - if current_admin.present? 
+      - if current_user.try(:admin?) 
         = link_to "Editar", edit_song_path(song), :class => "button blue" 
         = link_to "Borrar", song, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"  
       = song.lyrics
