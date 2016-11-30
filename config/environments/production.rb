@@ -1,5 +1,6 @@
 WebPi::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  set :bundle_env_variables, { 'NOKOGIRI_USE_SYSTEM_LIBRARIES' => 1 }
 
   # Code is not reloaded between requests
   config.cache_classes = true
