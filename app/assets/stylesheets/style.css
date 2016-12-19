@@ -32,27 +32,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Background color and/or image background */
 body {
-  background: #000000 url('bg2.jpg') center;
+  background: #000000 url('/assets/bg2.jpg') center;
   text-shadow: 1px 1px #0d0d0d;
   background-attachment: fixed;
 }
 
 /* Logo image */
 a#logo {
-  background: url('logo.png') no-repeat;
+  background: url('/assets/logo.png') no-repeat;
 }
 
 /* Skin */
 footer {
-background: #000000 url('footer_bg.png');  
+background: #000000 url('/assets/footer_bg.png');  
 }
 
 header {
-  background: #000000 url('header_bg.jpg') center;
+  background: #000000 url('/assets/header_bg.jpg') center;
 }
 
 #topbar {
-  background: #000000 url('bg.jpg');
+  background: #000000 url('/assets/bg.jpg');
 }
 
 #copyright {
