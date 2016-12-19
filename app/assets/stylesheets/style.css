@@ -39,20 +39,20 @@ body {
 
 /* Logo image */
 a#logo {
-  background: url('logo.png') no-repeat;
+  background: image-url('logo.png') no-repeat;
 }
 
 /* Skin */
 footer {
-background: #000000 url('footer_bg.png');  
+background: #000000 image-url('footer_bg.png');  
 }
 
 header {
-  background: #000000 url('header_bg.jpg') center;
+  background: #000000 image-url('header_bg.jpg') center;
 }
 
 #topbar {
-  background: #000000 url('bg.jpg');
+  background: #000000 image-url('bg.jpg');
 }
 
 #copyright {
