@@ -39,20 +39,20 @@ body {
 
 /* Logo image */
 a#logo {
-  background: url('/assets/logo.png') no-repeat;
+  background: url('/assets/images/logo.png') no-repeat;
 }
 
 /* Skin */
 footer {
-background: #000000 url('/assets/footer_bg.png');  
+background: #000000 url('/assets/images/footer_bg.png');  
 }
 
 header {
-  background: #000000 url('/assets/header_bg.jpg') center;
+  background: #000000 url('/assets/images/header_bg.jpg') center;
 }
 
 #topbar {
-  background: #000000 url('/assets/bg.jpg');
+  background: #000000 url('/assets/images/bg.jpg');
 }
 
 #copyright {
