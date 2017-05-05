@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :get_slides
-
   before_filter do
     resource = controller_name.singularize.to_sym
     method = "#{resource}_params"
@@ -10,9 +8,5 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
-  def get_slides
-    @slides= Slide.all
-  end
 
 end

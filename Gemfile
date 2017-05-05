@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 # Use postgresql as the database for Active Record
@@ -35,7 +35,6 @@ group :development do
   gem 'capistrano-rails'
   # Add this if you're using rvm
   gem 'capistrano-rvm', github: "capistrano/rvm"
-  
   gem 'quiet_assets'
 end
 
@@ -45,30 +44,14 @@ gem 'devise'
 gem 'devise_security_extension'
 gem 'devise-i18n'
 
-# View layer haml markup templates
+# View layer and haml markup templates
 gem 'haml-rails'
-
-
-# # View gems
-# gem 'bootstrap-sass'
-# gem 'font-awesome-rails'
-
-# gem 'therubyracer'
-
-# # Navigation
-# gem 'simple-navigation'
-# gem 'simple-navigation-bootstrap'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 
 # Form helpers
 gem 'simple_form'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'gon'
 
-# Pagination
-gem 'will_paginate', '~> 3.1.0'
-
-# Gems for contacts and orders
-gem 'mail_form'
-gem 'validates_email_format_of', '1.5.3'
-gem 'phony_rails'
-gem 'provincias'
+# Sorting and pagination
+gem 'jquery-datatables-rails', '~> 3.4.0'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125110804) do
+ActiveRecord::Schema.define(version: 20170505091728) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              limit: 255, default: "", null: false
@@ -52,11 +52,6 @@ ActiveRecord::Schema.define(version: 20161125110804) do
     t.string   "ticket_link",  limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-  end
-
-  create_table "contacts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "entries", force: :cascade do |t|
@@ -203,16 +198,5 @@ ActiveRecord::Schema.define(version: 20161125110804) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
-
-  create_table "votes", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.integer  "province"
-    t.text     "comment"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  add_index "votes", ["province"], name: "index_votes_on_province"
 
 end

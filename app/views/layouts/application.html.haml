@@ -1,36 +1,20 @@
-%html
-  %meta{:charset => "UTF-8"}/
-  %meta{:content => "por instinto, porinstinto, Por Instinto, PorInstinto ,rock, madrid, camisa de fuerza, sed animal, empachados, soy, a cal y canto, musica, rock estatal.", :name => "keywords"}/
-  %meta{:content => "Sitio oficial de la Banda de rock de Madrid. Noticias, fechas de conciertos, biografía, discografía, letras, audio y vídeos de canciones y fotos.", :name => "description"}/
-  %title Por Instinto - Web oficial
-
-  = favicon_link_tag 'favicon.ico'
-  
+!!!
+%html{:lang => "es"}
   %head
     %title Por Instinto - Web oficial
-    = include_gon
-    
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "por instinto, porinstinto, Por Instinto, PorInstinto, rock, madrid, camisa de fuerza, sed animal, empachados, soy, a cal y canto, musica, rock estatal.", :name => "keywords"}/
+    %meta{:content => "Sitio oficial de la Banda de rock de Madrid. Noticias, fechas de conciertos, biografía, discografía, letras, audio y vídeos de canciones y fotos.", :name => "description"}/  
+
+    = csrf_meta_tags
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    = csrf_meta_tags 
-
-    - Paperclip.options[:content_type_mappings] = { ogg: 'application/ogg' }  
-
+    = favicon_link_tag 'favicon.ico'
+  
   %body
-
     %header
-      #nav-container.row
-        .grid_12
-          %a#logo
-          = render partial: 'layouts/navigation'
-      .clear
-      = render partial: 'layouts/slider'    
-
-    %section#main-container
-      .row
-        .grid_12
-          = render partial: 'layouts/notices'
-          = yield
-
-    %footer#copyright
-      = render partial: 'layouts/copyright'
+      = render partial: 'layouts/navbar'
+    = yield
+/     %footer#copyright
+/       = render partial: 'layouts/copyright'

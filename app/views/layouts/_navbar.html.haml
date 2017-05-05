@@ -1,0 +1,43 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  #navigation-header.container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"} Logo
+    #myNavbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "#tour"} CONCIERTOS
+        %li
+          %a{:href => "#music"} MÚSICA
+        %li
+          %a{:href => "#band"} BANDA
+        %li
+          %a{:href => "#news"} NOTICIAS
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            GALERÍA
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} Fotos
+            %li
+              %a{:href => "#"} Vídeos  
+        %li
+          %a{:href => "https://www.facebook.com/PorInstintoRock", :target => "_blank", :title => "facebook"}
+            %span.fa.fa-facebook  
+        %li
+          %a{:href => "https://twitter.com/PorInstinto", :target => "_blank", :title => "twitter"}
+            %span.fa.fa-twitter  
+        %li
+          %a{:href => "http://www.youtube.com/user/PorInstintoRock", :target => "_blank", :title => "youtube"}
+            %span.fa.fa-youtube-square  
+        %li
+          %a{:href => "https://play.spotify.com/artist/23pWE9qp8f5JlM4Z6bpz3C", :target => "_blank", :title => "spotify"} 
+            %span.fa.fa-spotify
+        %li
+          %a{:href => "#contact"} 
+            CONTACTO
+            %span.fa.fa-bars      
