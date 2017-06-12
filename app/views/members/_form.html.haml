@@ -1,14 +1,8 @@
 = simple_form_for @member, :html=> { id: 'form' } do |f|
-  .form-group
-    = f.label "Nombre del miembro:"
-    %br
-    = f.input :name, label: false
-  .form-group
-    = f.label "Instrumentos:"
-    %br
-    = f.input :instrument, label: false
-  .form-group
-    = f.label "Imagen:"
-    %br
-    = f.file_field :photo, label: false
-  = f.button :submit
+  .form-inputs.row
+    .col-md-4= f.input :name, required: true
+    .col-md-4= f.input :instrument, required: true
+    .col-md-4= f.file_field :photo
+  %br
+  .form-actions.row
+    .col-md-4= f.button :submit

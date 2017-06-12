@@ -1,0 +1,74 @@
+/* BASIC NAVBAR */
+.navbar {
+    margin-bottom: 0;
+    background-color: transparent;
+    border: 0;
+}
+
+/* Link fonts */
+.navbar li a{
+    color: #fff !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* The active link */
+.navbar li.active a {
+    background-color:#bfbfbf !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+
+/* AFFIX */
+.affix {
+    top: 0;
+    width: 100%;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    background-color: black;
+    border-color: black;
+}
+
+.affix a {
+    padding: 15px !important;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.affix-top a {
+    padding: 25px !important;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+/* Brand */
+.affix-top .navbar-brand img{
+    height: 250%;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.affix .navbar-brand img{
+    height: 150%;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}

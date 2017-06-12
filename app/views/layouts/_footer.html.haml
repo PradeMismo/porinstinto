@@ -1,0 +1,10 @@
+%footer.text-center
+  =link_to fa_icon("chevron-up"), "#myPage", {title: "volver"}
+  %br/
+  %br/
+  = link_to image_tag("http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png", alt: "Licencia Creative Commons"),"http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_CO"
+  %p
+    = "Esta obra de" 
+    = link_to "Por Instinto", new_user_session_path
+    = "está bajo una"
+    = link_to "Licencia Creative Commons Atribución-NoComercial-CompartirIgual 3.0 Unported" ,"http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_CO", :rel => "license"

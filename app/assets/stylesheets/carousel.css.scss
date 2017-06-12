@@ -1,0 +1,36 @@
+/* CAROUSEL */ 
+.carousel-inner img {
+  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%); /* make all photos black and white */ 
+  width: 100%; /* Set width to 100% */
+  margin: auto;
+}
+
+.carousel-caption h3 {
+  color: #fff !important;
+}
+
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+  }
+}
+
+/* CAROUSEL HANDLERS */ 
+.carousel-control .icon-prev, .carousel-control .fa-chevron-left {
+  left: 50%;
+  margin-left: -10px;
+}
+
+.carousel-control .icon-next, .carousel-control .fa-chevron-right {
+  right: 50%;
+  margin-right: -10px;
+}
+
+.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .fa-chevron-left, .carousel-control .fa-chevron-right {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  z-index: 5;
+  display: inline-block;
+}

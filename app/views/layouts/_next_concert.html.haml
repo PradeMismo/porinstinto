@@ -1,5 +1,0 @@
-- if @next_concert.present?
-  %h4="Próximo concierto"
-  %strong= @next_concert.next_concert_description
-  = link_to "Más información", @next_concert.event_link, :target => "_blank" if  @next_concert.event_link.present?
-  .separator

@@ -1,14 +1,11 @@
-%article.post
-  - if current_user.try(:admin?) 
-    .right
-      = link_to "Nuevo concierto", new_concert_path, :class => "button green hover"
-      = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+- if current_user.try(:admin?) 
+  .right
+    = link_to "Nuevo concierto", new_concert_path, :class => "button green hover"
 
-  %h2="próximos conciertos" 
-= render partial: 'concert_table', locals: {concerts: @next_concerts} 
+%h2="próximos conciertos" 
+= render partial: 'concerts/tour', locals: {concerts: @concerts}  
 
 .separator
 
 %h2="conciertos pasados" 
-= render partial: 'concert_table', locals: {concerts: @previous_concerts}
-= will_paginate @previous_concerts  
+ = render partial: 'last', locals: {concerts: @previous_concerts}

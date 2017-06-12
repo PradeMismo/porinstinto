@@ -1,6 +1,6 @@
 = simple_form_for @band_photo, :html=> { id: 'form' } do |f|
-  .form-group
-    = f.label "Imagen:"
-    %br
-    = f.file_field :photo, label: false
-  = f.button :submit
+  .form-inputs.row
+    .col-md-12= f.file_field :photo
+  %br
+  .form-actions.row
+    .col-md-4= f.button :submit

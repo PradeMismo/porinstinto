@@ -6,7 +6,6 @@ gem 'rails', '4.2.8'
 gem 'sqlite3', group: :development
 # Use postgresql as the database for Active Record
 gem 'pg'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 # Use Uglifier as compressor for JavaScript assets
@@ -48,6 +47,8 @@ gem 'devise-i18n'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails'
 
 # Form helpers
 gem 'simple_form'
@@ -55,3 +56,4 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Sorting and pagination
 gem 'jquery-datatables-rails', '~> 3.4.0'
+gem 'will_paginate', '~> 3.1.0'

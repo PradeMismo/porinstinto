@@ -1,10 +1,14 @@
 class Video < ActiveRecord::Base
+  # RELATIONSHIPS
   belongs_to :video_category
 
-  default_scope  { order(:created_at => :desc) }
-
+  # VALIDATIONS
   validates_presence_of :title, :youtube_link
 
+  # SCOPES
+  default_scope  { order(:created_at => :desc) }
+  
+  # METHODS
   def youtube_id
     youtube_id = ""
     id_reached = false

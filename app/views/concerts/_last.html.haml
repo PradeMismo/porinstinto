@@ -1,4 +1,4 @@
-%table
+%table.table.table-striped#concerts.display
   %thead
     %tr
       %th= "Fecha"
@@ -9,7 +9,6 @@
       %th= "Info"
       - if current_user.try(:admin?) 
         %th= "Acciones" 
-
   %tbody
     - concerts.each do |concert|
       %tr

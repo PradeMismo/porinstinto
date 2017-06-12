@@ -2,15 +2,12 @@ class EntriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @entries = Entry.paginate(:page => params[:page], :per_page => 4)
+    @entries = Entry.all#.paginate(:page => params[:page], :per_page => 4)
     @next_concert = Concert.next.order("date ASC").first
-    @songs = Song.all.shuffle[0..8]
-    gon.songs = @songs
   end
 
 
   def new
-    @tags = Tag.all
     flash.now[:tip] = "Puedes adjuntar una imagen, link externo o link de youtube"  
   end 
 
@@ -27,7 +24,6 @@ class EntriesController < ApplicationController
 
 
   def edit
-    @tags = Tag.all 
   end
 
   def update

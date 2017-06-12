@@ -1,2 +1,14 @@
-#contact
-  ="CONTACT"
+#contact.container
+  .row
+    .col-md-8
+      %h3="Por Instinto"
+      %br
+      %p= fa_icon("map-marker", text: " Madrid, ES")
+      %p= fa_icon("phone", text: " 690 222 690")
+      %p= fa_icon("envelope", text: "porinstintogrupo@gmail.com")
+    .col-md-4
+      %h3="Contratación"
+      = link_to (image_tag "gsr.jpg"), "http://www.gaserdiscos.com",{:target => "_blank", :class => 'frame'}
+      %h4="GSR Producciones"
+      %p= fa_icon("phone", text: " 627 205 001")
+      %p= fa_icon("envelope", text: "garrido@gaserdiscos.com")

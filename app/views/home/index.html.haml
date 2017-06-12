@@ -1,8 +1,9 @@
-=carousel_for(@slides)
-
-.container
-  = render partial: 'layouts/tour'
-  = render partial: 'layouts/gallery'
-  = render partial: 'layouts/music'
-  = render partial: 'layouts/news'
-  = render partial: 'layouts/contact'
+= render partial: 'layouts/navbar'
+= carousel_for(@slides)
+= bootstrap_flash
+= render partial: 'layouts/tour'
+= render partial: 'layouts/gallery'
+= render partial: 'layouts/music'
+= render partial: 'layouts/news'
+= render partial: 'layouts/band'
+= render partial: 'layouts/contact'

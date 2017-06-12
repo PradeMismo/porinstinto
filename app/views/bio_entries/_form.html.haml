@@ -1,14 +1,11 @@
 = simple_form_for @bio_entry, :html=> { id: 'form' } do |f|
-  .form-group
-    = f.label "Título:"
+  .form-inputs
+    .row
+      .col-md-4= f.input :title, required: true
+      .col-md-4= f.input :chapter_order, required: true
     %br
-    = f.input :title, label: false, required: true
-  .form-group
-    = f.label "Capítulo:"
-    %br
-    = f.input :chapter_order, label: false, required: true
-  .form-group
-    = f.label "Contenido:"
-    %br
-    = f.input :content, label: false, required: true
-  = f.button :submit
+    .row  
+      .col-md-12= f.input :content, required: true
+  %br
+  .form-actions.row
+    .col-md-4= f.button :submit

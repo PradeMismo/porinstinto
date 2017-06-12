@@ -1,14 +1,10 @@
 = simple_form_for [@video_category, @video], :html=> { id: 'form' } do |f|
-  .form-group
-    = f.label "Título:"
+  .form-inputs
+    .row
+      .col-md-4= f.input :title, required: true
     %br
-    = f.input :title, label: false, required: true
-  .form-group
-    = f.label "Link youtube:"
-    %br
-    = f.input :youtube_link, label: false, required: true
-  .form-group
-    = f.label "Descripción:"
-    %br
-    = f.input :description, label: false
-  = f.button :submit
+    .row
+      .col-md-6= f.input :youtube_link, required: true
+      .col-md-6= f.input :description
+  .form-actions.row
+    .col-md-4= f.button :submit

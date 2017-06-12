@@ -1,10 +1,12 @@
 class Concert < ActiveRecord::Base
+  # VALIDATIONS
   validates_presence_of :date, :place, :concert_hall, :tickets 
 
+  # SCOPES
+  scope :next,     lambda{ |date = DateTime.now| where("date >  ? ", date) }
   scope :previous, lambda{ |date = DateTime.now| where("date <= ? ", date) }
-  scope :next,     lambda{ |date = DateTime.now| where("date > ? ", date) }
-
-
+  
+  # METHODS
   def info
     results = ""
     if bands.present?
@@ -13,10 +15,10 @@ class Concert < ActiveRecord::Base
     if notes.present?
       results += notes.to_s + "."
     end
-    return  results
+    return results
   end
 
-  def next_concert_description
-    return date.strftime("%d/%m/%Y") + " " + place + ", " + concert_hall
+  def location
+    return concert_hall + ", " + place
   end
 end

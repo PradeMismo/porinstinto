@@ -46,7 +46,29 @@ module CarouselHelper
         class: (is_active ? 'item active' : 'item'),
       }
 
-      content_tag(:div, image_tag(input_slide.photo.url(:slide)), options)
+      # content_tag(:div, image_tag(input_slide.photo.url(:slide)), options)
+      image   = slide_image_tag(input_slide)
+      caption = slide_caption_tag(input_slide)
+      content_tag(:div, safe_join([image,caption]), options)
+    end
+
+    def slide_image_tag(input_slide)
+      # if input_slide.is_image?
+      image_tag(input_slide.photo.url(:slide))
+      # elsif input_slide.is_video?
+      #   video_tag(input_slide.photo.url) 
+      # end
+    end
+
+    def slide_caption_tag(input_slide)
+      options = {
+        class: ('carousel-caption'),
+      }
+
+      title = content_tag(:h3, input_slide.title)
+      test  = content_tag(:p, input_slide.description) 
+      link  = (link_to 'Ver más', input_slide.link, class: "btn btn-primary")
+      content_tag(:div, safe_join([title, test, link]),options)
     end
 
     def controls

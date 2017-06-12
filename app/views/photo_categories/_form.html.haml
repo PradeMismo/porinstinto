@@ -1,10 +1,7 @@
 = simple_form_for @photo_category, :html=> { id: 'form' } do |f|
-  .form-group
-    = f.label "Título:"
-    %br
-    = f.input :title, label: false, required: true
-  .form-group
-    = f.label "Imagen:"
-    %br
-    = f.file_field :photo, label: false
-  = f.button :submit
+  .form-inputs.row
+    .col-md-4= f.input :title
+    .col-md-4= f.file_field :photo
+  %br
+  .form-actions.row
+    .col-md-4= f.button :submit

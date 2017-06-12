@@ -1,0 +1,9 @@
+.row
+  .col-md-5
+    / = image_tag() FOTO DE CONCIERTOS
+  .col-md-7
+  - concerts.each do |concert|
+    .well
+      .row
+        .col-md-1= calendar_tag(concert.date)
+        .col-md-3= concert_tag(concert)

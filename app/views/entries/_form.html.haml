@@ -1,30 +1,21 @@
 = simple_form_for @entry, :html=> { id: 'form' } do |f|
-  .form-group
-    = f.label "Fecha de publicación:"
-    %br
-    = f.datetime_select :publish_date, label: false, required: true 
-  .form-group
-    = f.label "Título:"
-    %br
-    = f.input :title, label: false, required: true
-  .form-group
-    = f.label "Contenido:"
-    %br
-    = f.input :content, label: false, required: true
-  .form-group
-    = f.label "Categoría:"
-    %br
-    = f.input :tag_id, label: false, required: true, collection: @tags
-  .form-group
-    = f.label "Link youtube:"
-    %br
-    = f.input :youtube_link, label: false
-  .form-group
-    = f.label "Link externo:"
-    %br
-    = f.input :external_link, label: false
-  .form-group
-    = f.label "Imagen:"
-    %br
-    = f.file_field :photo, label: false
-  = f.button :submit
+  .form-inputs
+    .row
+      .col-md-4= f.input :publish_date, as: :date_picker, required: true 
+      .col-md-4= f.input :title, required: true
+      .col-md-4= f.association :tag, required: true
+    %br  
+    .row  
+      .col-md-12= f.input :content, required: true
+    %br  
+    .row 
+      .col-md-12= f.input :youtube_link
+    %br  
+    .row 
+      .col-md-12= f.input :external_link
+    %br  
+    .row 
+      .col-md-12= f.file_field :photo
+  %br
+  .form-actions.row
+    .col-md-4= f.button :submit

@@ -1,18 +1,11 @@
 = simple_form_for [@record, @song], :html=> { id: 'form' } do |f|
-  .form-group
-    = f.label "Nombre:"
+  .form-inputs
+    .row
+      .col-md-4= f.input :name, required: true
+      .col-md-4= f.input :track_order, required: true
     %br
-    = f.input :name, label: false, required: true
-  .form-group
-    = f.label "Letra:"
-    %br
-    = f.input :lyrics, label: false, required: true
-  .form-group
-    = f.label "Orden:"
-    %br
-    = f.input :track_order, label: false, required: true
-  .form-group
-    = f.label "Archivo de audio:"
-    %br
-    = f.file_field :music_file, label: false
-  = f.button :submit
+    .row
+      .col-md-12= f.input :lyrics, required: true
+  %br
+  .form-actions.row
+    .col-md-4= f.button :submit
