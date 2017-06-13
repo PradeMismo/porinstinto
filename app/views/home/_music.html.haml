@@ -1,0 +1,7 @@
+#music.container
+  .gallery_index
+    - @records.each do |record|
+      %li.record
+        .box.record
+          = link_to image_tag(record.photo.url(:gallery), :class => 'cover'), record_path(record)
+          %h3= link_to record.name, record_path(record)

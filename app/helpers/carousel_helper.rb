@@ -45,8 +45,6 @@ module CarouselHelper
       options = {
         class: (is_active ? 'item active' : 'item'),
       }
-
-      # content_tag(:div, image_tag(input_slide.photo.url(:slide)), options)
       image   = slide_image_tag(input_slide)
       caption = slide_caption_tag(input_slide)
       content_tag(:div, safe_join([image,caption]), options)
@@ -67,7 +65,7 @@ module CarouselHelper
 
       title = content_tag(:h3, input_slide.title)
       test  = content_tag(:p, input_slide.description) 
-      link  = (link_to 'Ver más', input_slide.link, class: "btn btn-primary")
+      link  = (link_to 'VER MÁS', input_slide.link, class: "btn btn-danger")
       content_tag(:div, safe_join([title, test, link]),options)
     end
 

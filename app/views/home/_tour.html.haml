@@ -1,0 +1,20 @@
+%br
+%br
+#tour
+  .row
+    .col-md-7
+      = image_tag("tour.jpg")
+    .col-md-5
+      - if @concerts.present?
+        %br
+        %br
+        - @concerts.each do |concert|
+          .row
+            .col-md-1= calendar_tag(concert.date)
+            .col-md-1
+            .col-md-9.text-center= concert_tag(concert)
+            .col-md-1
+      - else
+        .text-center.h4= "ACTUALMENTE NO TENEMOS CONCIERTOS PROGRAMADOS"
+      
+      .text-center= link_to("MÁS FECHAS", concerts_path, class: "btn btn-danger")

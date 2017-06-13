@@ -1,9 +1,16 @@
-= render partial: 'layouts/navbar'
+= render partial: 'home_navbar'
 = carousel_for(@slides)
+/ Permitir vídeos
 = bootstrap_flash
-= render partial: 'layouts/tour'
-= render partial: 'layouts/gallery'
-= render partial: 'layouts/music'
-= render partial: 'layouts/news'
-= render partial: 'layouts/band'
-= render partial: 'layouts/contact'
+= render partial: 'description'
+/ Redactar descripción.
+= render partial: 'tour'
+/ Controlar tamaño/desbordamiento de la foto.
+/ Alinear botón abajo
+/ Alinear mensaje al centro
+/ Formato texto mensaje
+= render partial: 'music'
+= render partial: 'gallery'
+= render partial: 'news'
+= render partial: 'band'
+= render partial: 'contact'
