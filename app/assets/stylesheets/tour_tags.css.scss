@@ -4,27 +4,47 @@
   border: 1px solid #d43f3a; 
 }
 
+.panel-header {
+  height: 10px; 
+}
+
+.panel-body {
+  height: 60px; 
+}
+
+
 .panel-footer {
   background-color: #d9534f !important;
   border-top: none;
+  height: 30px;
 }
 
 .panel h6{
   font-weight: bold !important;
-  line-height: 25%;
+  color: black !important;
+  line-height: 0%;
+
 }
 
 .panel h5{
   font-weight: bold !important;
-  line-height: 0%;
   color: white !important;
+  line-height: 0%;  
 }
 
 .panel h3{
   font-weight: bold !important;
-  line-height: 0%;
+  color: black !important;
+  line-height: 0%;  
 }
 
-.panel:hover {
-    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+.concert-desc h5 {
+    color: white;
+    text-align: center; 
+}
+
+.concert-desc h4 {
+    color: white;
+    font-weight: bold;
+    text-align: center;   
 }

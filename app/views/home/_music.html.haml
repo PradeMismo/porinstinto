@@ -1,7 +1,9 @@
 #music.container
-  .gallery_index
+  %br
+  .row
     - @records.each do |record|
-      %li.record
-        .box.record
-          = link_to image_tag(record.photo.url(:gallery), :class => 'cover'), record_path(record)
-          %h3= link_to record.name, record_path(record)
+      .col-md-4
+        .record_box
+          = link_to(image_tag(record.photo.url(:gallery)), record_path(record))
+          .middle
+            %h2= record.name

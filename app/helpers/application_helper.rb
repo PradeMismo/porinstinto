@@ -11,7 +11,7 @@ module ApplicationHelper
     footer = content_tag(:div, month, class: "panel-footer")
 
     content = safe_join([header,body,footer])
-    content_tag(:div, content, class: "panel panel-danger text-center")
+    content_tag(:div, content, class: "panel text-center")
   end
 
   def concert_tag(concert)
@@ -20,6 +20,6 @@ module ApplicationHelper
     location  = content_tag(:h4, concert.location)
 
     content = safe_join([info,separator,location])
-    content_tag(:div, content)
+    content_tag(:div, content, class: "concert-desc")
   end
 end

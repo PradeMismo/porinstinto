@@ -1,2 +1,13 @@
-#gallery.container
-  ="GALLERY"
+#gallery
+  .container
+    %br
+    .row
+      - @videos.each do |video|
+        .col-md-4
+          .record_box
+            = link_to(image_tag(video.thumbnail_url), video_path(video))
+            .middle
+              %h2= video.title
+    %br
+    .text-center= link_to("más videos", video_categories_path, class: "btn btn-danger")
+    %br

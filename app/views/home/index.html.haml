@@ -1,16 +1,19 @@
 = render partial: 'home_navbar'
+/ Cuadrar tamaño logo para 100% firefox (según tipo de letra)
 = carousel_for(@slides)
 / Permitir vídeos
 = bootstrap_flash
 = render partial: 'description'
 / Redactar descripción.
+/ Fondo Muy Suave (Parallax).
 = render partial: 'tour'
-/ Controlar tamaño/desbordamiento de la foto.
-/ Alinear botón abajo
-/ Alinear mensaje al centro
-/ Formato texto mensaje
+/ Fondo más currado
 = render partial: 'music'
+/ Tamaño, padding, etc
+/ Hoover, sombra
 = render partial: 'gallery'
+/ Masonry de fotos
 = render partial: 'news'
+/ Mini galería
 = render partial: 'band'
 = render partial: 'contact'
