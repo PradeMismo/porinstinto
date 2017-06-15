@@ -28,6 +28,11 @@ label {
 }
 
 /* DESCRIPTION CONTAINER*/
+#description {
+    background-image: url("description.jpg");
+    background-attachment: fixed;
+}
+
 #description h1 {
     font-weight: bold;
     text-transform: uppercase;
@@ -57,6 +62,18 @@ label {
 /* MUSIC CONTAINER */
 #music {
 }
+
+/* GALLERY CONTAINER */
+.grid-item {
+  float: left;
+  width: 20%;
+  height: 60px;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+}
+
+.grid-item--width2 { width: 40%; }
+
+.grid-item--height2 { height: 140px; }
 
 /* BAND CONTAINER*/
 #band {

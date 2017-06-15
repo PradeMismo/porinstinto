@@ -1,0 +1,29 @@
+.record_box, .video_box {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background: #1d1d1d;
+    -webkit-box-shadow: 0px 9px 22px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 22px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 22px -2px rgba(0,0,0,0.75);    
+}
+
+.record_box img, .video_box img {
+    opacity: 0.8;
+    width:100%;
+}
+
+.record_box:hover img, .video_box:hover img  {
+    opacity: 1;
+    margin-top: 50%;
+    -webkit-transition: margin .5s;
+    -moz-transition: margin .5s;
+    transition: margin .5s;
+}
+
+.record_box h3, .video_box h3 {
+    padding: 10px 10px 5px;
+    color: white !important;
+    font-weight: bold;
+    text-transform: uppercase; 
+}
