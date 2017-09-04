@@ -1,15 +1,20 @@
-%article.post
-  - if current_user.try(:admin?) 
-    .right
-      = link_to "Nuevo disco", new_record_path, :class => "button green hover"
-      = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+= render partial: 'layouts/navbar2'
 
-  %h2="discografía"
-  %br 
-  = render partial: 'record_table', locals: {records: @studio_records}
+#records.container
+  %br
+  = bootstrap_flash
+/ %article.post
+/   - if current_user.try(:admin?) 
+/     .right
+/       = link_to "Nuevo disco", new_record_path, :class => "button green hover"
+/       = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
 
-  .separator
+/   %h2="discografía"
+/   %br 
+/   = render partial: 'record_table', locals: {records: @studio_records}
 
-  %h2="recopilatorios"
-  %br 
-  = render partial: 'record_table', locals: {records: @compilation_records}  
+/   .separator
+
+/   %h2="recopilatorios"
+/   %br 
+/   = render partial: 'record_table', locals: {records: @compilation_records}  

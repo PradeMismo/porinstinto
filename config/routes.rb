@@ -35,4 +35,5 @@ WebPi::Application.routes.draw do
   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
+  get 'concerts/last', :to => 'concerts#last'
 end

@@ -1,9 +1,14 @@
-%article.post
-  - if current_user.try(:admin?) 
-    .right
-      = link_to "Nueva categoría", new_video_category_path, :class => "button green hover"
-      = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+= render partial: 'layouts/navbar2'
 
-- @video_categories.each do |category|
-  = render partial: 'video_table', locals: {category: category}
-  
+#videos.container
+  %br
+  = bootstrap_flash
+/ %article.post
+/   - if current_user.try(:admin?) 
+/     .right
+/       = link_to "Nueva categoría", new_video_category_path, :class => "button green hover"
+/       = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+
+/ - @video_categories.each do |category|
+/   = render partial: 'video_table', locals: {category: category}
+/   
