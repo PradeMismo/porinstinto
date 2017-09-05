@@ -9,7 +9,7 @@
 }
 
 .record_box img, .video_box img {
-    opacity: 0.8;
+    opacity: 0.9;
     width:100%;
 }
 
@@ -22,8 +22,9 @@
 }
 
 .record_box h3, .video_box h3 {
-    padding: 10px 10px 5px;
+    padding: 0px 15px 15px 15px;
     color: white !important;
     font-weight: bold;
-    text-transform: uppercase; 
+    text-transform: uppercase;
+    position: absolute;
 }

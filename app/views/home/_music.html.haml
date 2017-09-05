@@ -4,8 +4,9 @@
     - @records.each do |record|
       .col-md-4
         .record_box
-          = link_to(image_tag(record.photo.url(:gallery)), record_path(record))
           %h3= link_to record.name, record_path(record)
+          = link_to(image_tag(record.photo.url(:gallery)), record_path(record))
+          
   %br
-  .text-center= link_to("discografía", records_path, class: "btn btn-danger")
-  %br
+  /.text-center= link_to("discografía", records_path, class: "btn btn-danger")
+  /%br

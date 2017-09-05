@@ -1,12 +1,12 @@
 #gallery
-  .grid{"data-masonry" => "{ \"itemSelector\": \".grid-item\", \"columnWidth\": 200 }"}
-    / - @images.each do |image|
-    /   .grid-item
-    /     .col-md-8
-    /       = image_tag image.photo.url(:cover)
-  %br
-    .text-center= link_to("más fotos", photo_categories_path, class: "btn btn-danger")
-  %br
+  /.grid{"data-masonry" => "{ \"itemSelector\": \".grid-item\", \"columnWidth\": 200 }"}
+  / - @images.each do |image|
+  /   .grid-item
+  /     .col-md-8
+  /       = image_tag image.photo.url(:cover)
+  /%br
+  /  .text-center= link_to("más fotos", photo_categories_path, class: "btn btn-danger")
+  /%br
   .container
     %br
     .row
@@ -16,5 +16,5 @@
             = link_to(image_tag(video.thumbnail_url), video_path(video))
             %h3= link_to video.title, video_path(video)
     %br
-    .text-center= link_to("más videos", video_categories_path, class: "btn btn-danger")
-    %br
+  /  .text-center= link_to("más videos", video_categories_path, class: "btn btn-danger")
+  /  %br
