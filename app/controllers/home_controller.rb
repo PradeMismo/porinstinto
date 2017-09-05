@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     @slides= Slide.all
-    @concerts= Concert.last(3) #.next
+    @concerts= Concert.next.last(3)
     @records= Record.studio.last(3)
     @images= Image.all
     @videos= Video.last(3)

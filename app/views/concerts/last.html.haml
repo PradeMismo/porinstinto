@@ -1,0 +1,13 @@
+= render partial: 'layouts/navbar2'
+
+.container
+  %br
+  %h2
+    ="conciertos pasados"
+    .pull-right= link_to "Nuevo concierto", new_concert_path, :class => "btn btn-success" if current_user.try(:admin?)
+  %br 
+  = bootstrap_flash
+  %br 
+  = render partial: 'last_table', locals: {concerts: @concerts} 
+  %br  
+  .text-center= link_to("próximos conciertos", concerts_path, class: "btn btn-danger") 

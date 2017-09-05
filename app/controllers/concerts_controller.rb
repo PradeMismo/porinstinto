@@ -6,6 +6,10 @@ class ConcertsController < ApplicationController
     flash.now[:info] = "Actualmente no hay conciertos programados" unless @concerts.present?
   end
 
+  def last
+    @concerts = Concert.previous.order("date DESC")
+  end
+
 
   def new
   end 

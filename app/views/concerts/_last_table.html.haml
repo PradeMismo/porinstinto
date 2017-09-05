@@ -1,0 +1,31 @@
+.div
+  %table.table.table-striped#concerts.display
+    %thead
+      %tr
+        %th= "Fecha"
+        %th= "Lugar"      
+        %th= "Recinto"
+        %th= "Hora"
+        %th= "Entrada"
+        %th= "Info"
+        %th= "Acciones" if current_user.try(:admin?) 
+           
+    %tbody
+      - concerts.each do |concert|
+        %tr
+          %td= concert.date.strftime("%d/%m/%Y")
+          %td= concert.place
+          %td= concert.concert_hall
+          %td= concert.date.strftime("%H:%M")
+          - if concert.ticket_link.present?
+            %td= link_to concert.tickets, concert.ticket_link, target: "_blank"
+          -else
+            %td= concert.tickets
+          - if concert.event_link.present?
+            %td= link_to concert.info, concert.event_link, target: "_blank"
+          - else
+            %td= concert.info
+          - if current_user.try(:admin?) 
+            %td
+              = link_to "Editar", edit_concert_path(concert), :class => "btn btn-xs btn-info" 
+              = link_to "Borrar", concert, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-xs btn-danger"

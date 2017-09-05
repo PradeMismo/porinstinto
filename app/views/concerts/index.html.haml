@@ -1,11 +1,13 @@
-- if current_user.try(:admin?) 
-  .right
-    = link_to "Nuevo concierto", new_concert_path, :class => "button green hover"
+= render partial: 'layouts/navbar2'
 
-%h2="próximos conciertos" 
-= render partial: 'concerts/tour', locals: {concerts: @concerts}  
-
-.separator
-
-%h2="conciertos pasados" 
-= render partial: 'last', locals: {concerts: @previous_concerts}
+.container
+  %br
+  %h2
+    ="próximos conciertos"
+    .pull-right= link_to "Nuevo concierto", new_concert_path, :class => "btn btn-success" if current_user.try(:admin?)
+  %br 
+  = bootstrap_flash
+  %br
+  = render partial: 'tour', locals: {concerts: @concerts} 
+  %br 
+  .text-center= link_to("conciertos pasados", concerts_last_path, class: "btn btn-danger") 

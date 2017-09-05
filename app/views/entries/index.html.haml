@@ -1,14 +1,19 @@
-= render partial: 'left_sidebar'
+= render partial: 'layouts/navbar2'
 
-.grid_8
-  %article.post
-    - if current_user.try(:admin?) 
-      .right
-        = link_to "Nueva entrada", new_entry_path, :class => "button green hover"
-        = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+#news.container
+  %br
+  = bootstrap_flash
+/ = render partial: 'left_sidebar'
 
-    %h2="Noticias"
+/ .grid_8
+/   %article.post
+/     - if current_user.try(:admin?) 
+/       .right
+/         = link_to "Nueva entrada", new_entry_path, :class => "button green hover"
+/         = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+
+/     %h2="Noticias"
     
-  .separator   
+/   .separator   
 
-  = render partial: 'entry_table'
+/   = render partial: 'entry_table'
