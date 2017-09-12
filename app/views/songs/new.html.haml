@@ -1,2 +1,9 @@
-%h2= "Nueva canción para " + @record.name
-= render 'form'
+= render partial: 'layouts/navbar2'
+
+#records.container
+  %br
+  = bootstrap_flash
+  %br
+  %h2= "Nueva canción para " + @record.name
+  %br
+  = render 'form'

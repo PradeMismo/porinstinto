@@ -1,50 +1,56 @@
 /* TOUR DATES */
-.panel {
+#tour .panel, #concerts .panel {
   display: inline-block;
   border: 1px solid #d43f3a; 
 }
 
-.panel-header {
+#tour .panel-header, #concerts .panel-header {
   height: 10px; 
 }
 
-.panel-body {
+#tour .panel-body, #concerts .panel-body {
   height: 60px; 
 }
 
 
-.panel-footer {
+#tour .panel-footer, #concerts .panel-footer {
   background-color: #d9534f !important;
   border-top: none;
   height: 30px;
 }
 
-.panel h6{
+#tour .panel h6, #concerts .panel h6{
   font-weight: bold !important;
   color: black !important;
   line-height: 0%;
-
 }
 
-.panel h5{
+#tour .panel h5, #concerts .panel h5{
   font-weight: bold !important;
   color: white !important;
   line-height: 0%;  
 }
 
-.panel h3{
+#tour .panel h3, #concerts .panel h3{
   font-weight: bold !important;
   color: black !important;
   line-height: 0%;  
 }
 
-.concert-desc h5 {
+#tour .concert-desc h5 {
     color: white;
     text-align: center; 
 }
 
-.concert-desc h4 {
+#tour .concert-desc h4 {
     color: white;
-    font-weight: bold;
+    text-align: center;   
+}
+
+#concerts .concert-desc h5 {
+    text-align: center; 
+}
+
+#concerts .concert-desc h4 {
     text-align: center;   
 }

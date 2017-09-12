@@ -1,2 +1,9 @@
-%h2= "Editar vídeo de " + @video_category.title
-= render 'form'
+= render partial: 'layouts/navbar2'
+
+#videos.container
+  %br
+  = bootstrap_flash
+  %br
+  %h2= "Editar vídeo de " + @video_category.title
+  %br
+  = render 'form'

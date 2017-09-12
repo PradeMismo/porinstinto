@@ -44,5 +44,10 @@ class SlidesController < ApplicationController
     flash[:success] = 'Slide deleted'
     redirect_to slides_path
   end
-  
+
+  private
+
+  def slide_params
+    params.require(:slide).permit(:title, :description, :link, :photo, :slide_order)
+  end   
 end

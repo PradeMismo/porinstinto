@@ -1,2 +1,9 @@
-%h2= "Editar slide"
-= render 'form'
+= render partial: 'layouts/navbar2'
+
+#slides.container
+  %br
+  = bootstrap_flash
+  %br
+  %h2= "Editar slide"
+  %br
+  = render 'form'

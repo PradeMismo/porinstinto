@@ -1,2 +1,9 @@
-%h2= "Editar galería de videos"
-= render 'form'
+= render partial: 'layouts/navbar2'
+
+#videos.container
+  %br
+  = bootstrap_flash
+  %br
+  %h2= "Editar galería de videos"
+  %br
+  = render 'form'

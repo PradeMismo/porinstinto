@@ -1,18 +1,15 @@
-%aside
-  - if current_user.try(:admin?)
-    = link_to "Nuevo miembro", new_member_path, :class => "button green hover"
-
-  .gallery_index
+.well
+  %br
+  .pull-right= link_to fa_icon("plus-circle"), new_member_path, :class => "btn btn-success" if current_user.try(:admin?) 
+  .row.text-center
     - @members.each do |member|
       %li
         - if current_user.try(:admin?)
-          .right
-            = link_to "Editar", edit_member_path(member), :class => "button blue" 
-            = link_to "Borrar", member, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
-        .box
-          = image_tag member.photo.url(:cover), :class => 'cover'
+          .pull-right
+            = link_to fa_icon("edit") , edit_member_path(member),                                 :class => "btn btn-primary" 
+            = link_to fa_icon("trash"), @member, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
+        .video_box
+          %h5= member.instrument
           %h3= member.name
-          %p
-            %strong= member.instrument
-
-        .separator
+          = image_tag member.photo.url(:cover)          
+        %hr

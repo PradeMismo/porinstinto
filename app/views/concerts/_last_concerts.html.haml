@@ -1,0 +1,32 @@
+- model_class = Concert
+
+%table.table.table-striped#concerts.display
+  %thead
+    %tr
+      %th= "Fecha"
+      %th= "Lugar"      
+      %th= "Recinto"
+      %th= "Hora"
+      %th= "Entrada"
+      %th= "Info"          
+  %tbody
+    - concerts.each do |concert|
+      %tr
+        %td= concert.date.strftime("%d/%m/%Y")
+        %td= concert.place
+        %td= concert.concert_hall
+        %td= concert.date.strftime("%H:%M")
+        %td
+          - if concert.ticket_link.present?
+            = link_to concert.tickets, concert.ticket_link, target: "_blank"
+          -else
+            = concert.tickets
+        %td
+          - if concert.event_link.present?
+            = link_to concert.info, concert.event_link, target: "_blank"
+          - else
+            = concert.info
+          - if current_user.try(:admin?) 
+            .pull-right
+              = link_to fa_icon("edit") , edit_concert_path(concert),                                :class => "btn btn-primary" 
+              = link_to fa_icon("trash"), concert, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"

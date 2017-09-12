@@ -1,9 +1,6 @@
-.gallery_index
+.row
   - records.each do |record|
     .col-md-4
-      %li.record
-        .box.record
-          = link_to image_tag(record.photo.url(:gallery), :class => 'cover'), record_path(record)
-          %h3= record.name
-          %p
-            %strong= link_to record.name, record_path(record)
+      .record_box
+        %h3= link_to record.name, record_path(record)
+        = link_to(image_tag(record.photo.url(:gallery)), record_path(record))

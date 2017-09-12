@@ -6,12 +6,7 @@
       - if @concerts.present?
         %br
         %br
-        - @concerts.each do |concert|
-          .row
-            .col-md-1= calendar_tag(concert.date)
-            .col-md-1
-            .col-md-9= concert_tag(concert)
-            .col-md-1
+        = render partial: 'concerts/next_concerts', locals: {concerts: @concerts}
       - else
         %br
         %br
@@ -20,4 +15,4 @@
         %br
         %br
         %br
-      /.text-center= link_to("MÁS FECHAS", concerts_path, class: "btn btn-danger")
+      .text-center= link_to("MÁS FECHAS", concerts_path, class: "btn btn-danger")

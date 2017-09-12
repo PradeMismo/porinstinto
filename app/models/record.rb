@@ -1,6 +1,6 @@
 class Record < ActiveRecord::Base
   # DECLARATIONS
-  has_attached_file :photo, :styles => {:cover => "260x260>", :gallery => "300x300>"}, dependent: :destroy
+  has_attached_file :photo, :styles => {:gallery => "300x300>"}, dependent: :destroy
   
   # RELATIONSHIPS
   has_many :songs, dependent: :destroy

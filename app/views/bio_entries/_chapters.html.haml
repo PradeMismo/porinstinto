@@ -1,0 +1,28 @@
+%ul.nav.nav-tabs
+  - @bio_entries.each do |entry|
+    - if entry.chapter_order < @bio_entries.count
+      %li= link_to ("Capítulo " + entry.chapter_order.to_s) , ("#" + entry.tab_container)
+    - else 
+      %li.active= link_to ("Capítulo " + entry.chapter_order.to_s) , ("#" + entry.tab_container)
+.tab-content
+  - @bio_entries.each do |entry|
+    - if entry.chapter_order < @bio_entries.count
+      .tab-pane.fade{:id => "#{entry.tab_container}"}
+        %h6
+          = "Capítulo " + entry.chapter_order.to_s + ": " + entry.title
+          - if current_user.try(:admin?)
+            .pull-right 
+              = link_to fa_icon("edit") , edit_bio_entry_path(entry),                              :class => "btn btn-primary" 
+              = link_to fa_icon("trash"), entry, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
+  
+        %p= simple_format entry.content
+    - else
+      .tab-pane.fade.in.active{:id => "#{entry.tab_container}"}
+        %h6
+          = "Capítulo " + entry.chapter_order.to_s + ": " + entry.title
+          - if current_user.try(:admin?)
+            .pull-right 
+              = link_to fa_icon("edit") , edit_bio_entry_path(entry),                              :class => "btn btn-primary" 
+              = link_to fa_icon("trash"), entry, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
+  
+        %p= simple_format entry.content

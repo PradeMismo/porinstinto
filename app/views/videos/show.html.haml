@@ -1,12 +1,16 @@
-%article.post
-  - if current_user.try(:admin?)
-    .right
-      = link_to "Editar", edit_video_path(@video), :class => "button blue" 
-      = link_to "Borrar", @video, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
-  %h2= @video.title
+= render partial: 'layouts/navbar2'
+
+#videos.container
   %br
-
-  .center
+  = bootstrap_flash
+  %h2
+    = @video.title
+    - if current_user.try(:admin?)
+      .pull-right 
+        = link_to fa_icon("edit") , edit_video_path(@video),                                  :class => "btn btn-primary" 
+        = link_to fa_icon("trash"), @video, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
+  %br
+  .text-center
     %iframe{:frameborder => "0", :height => "315", :src => @video.youtube_embeed, :width => "560"}
-
+  %br
   %p= @video.description

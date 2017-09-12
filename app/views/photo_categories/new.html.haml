@@ -1,2 +1,9 @@
-%h2= "Nueva galería de fotos"
-= render 'form'
+= render partial: 'layouts/navbar2'
+
+#records.container
+  %br
+  = bootstrap_flash
+  %br
+  %h2= "Nueva galería de fotos"
+  %br
+  = render 'form'

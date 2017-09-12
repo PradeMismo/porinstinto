@@ -1,15 +1,18 @@
-- if current_user.try(:admin?)
-  .right 
-    = link_to "Nueva canción", new_record_song_path(@record), :class => "button green hover"
-
-%h2= "Canciones" 
-
+%h4
+  = "Canciones"
+  .pull-right= link_to fa_icon("plus-circle"), new_record_song_path(@record), :class => "btn btn-success" if current_user.try(:admin?) 
 %br
-#accordion
+#accordion.panel-group
   - @songs.each do |song|
-    %h6= song.track_order.to_s + ". " + song.name        
-    %p{:style => "white-space: pre-wrap;"}
-      - if current_user.try(:admin?) 
-        = link_to "Editar", edit_song_path(song), :class => "button blue" 
-        = link_to "Borrar", song, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"  
-      = song.lyrics
+    .panel.panel-default
+      .panel-heading
+        %h4.panel-title
+          %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{song.id.to_s}"}
+            = song.track_order.to_s + ". " + song.name
+      .panel-collapse.collapse{:id => "collapse#{song.id.to_s}"}
+        .panel-body
+          %p= song.lyrics
+          - if current_user.try(:admin?)
+            .pull-right
+              = link_to fa_icon("edit") , edit_song_path(song),                                   :class => "btn btn-primary"
+              = link_to fa_icon("trash"), song, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"

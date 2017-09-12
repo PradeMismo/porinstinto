@@ -13,15 +13,23 @@
     width:100%;
 }
 
-.record_box:hover img, .video_box:hover img  {
+.record_box:hover img, {
     opacity: 1;
-    margin-top: 50%;
+    margin-top: 30%;
     -webkit-transition: margin .5s;
     -moz-transition: margin .5s;
     transition: margin .5s;
 }
 
-.record_box h3, .video_box h3 {
+.video_box:hover img {
+    opacity: 1;
+    margin-top: 25%;
+    -webkit-transition: margin .5s;
+    -moz-transition: margin .5s;
+    transition: margin .5s;
+}
+
+.record_box h3, .video_box h3 , .video_box h5 {
     padding: 0px 15px 15px 15px;
     color: white !important;
     font-weight: bold;

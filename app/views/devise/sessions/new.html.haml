@@ -1,12 +1,19 @@
-%h2="Iniciar sesión" 
+= render partial: 'layouts/navbar2'
 
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name), id: 'form') do |f|
-  .form-inputs
-    .row
-      .col-md-4= f.input :email, required: false, autofocus: true
-    %br
-    .row
-      .col-md-4= f.input :password, required: false
+#sessions.container
   %br
-  .form-actions.row
-    .col-md-4= f.button :submit, "Conectarse"
+  = bootstrap_flash
+  %br
+  %h2="Iniciar sesión" 
+  %br
+
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), id: 'form') do |f|
+    .form-inputs
+      .row
+        .col-md-4= f.input :email, required: false, autofocus: true
+      %br
+      .row
+        .col-md-4= f.input :password, required: false
+    %br
+    .form-actions.row
+      .col-md-4= f.button :submit, "Conectarse"

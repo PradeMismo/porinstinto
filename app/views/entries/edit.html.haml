@@ -1,2 +1,9 @@
-%h2= "Editar entrada"
-= render 'form'
+= render partial: 'layouts/navbar2'
+
+#entries.container
+  %br
+  = bootstrap_flash
+  %br
+  %h2= "Editar entrada"
+  %br
+  = render 'form'

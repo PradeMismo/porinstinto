@@ -1,2 +1,9 @@
-%h2= "Editar foto de " + @photo_category.title
-= render 'form'
+= render partial: 'layouts/navbar2'
+
+#images.container
+  %br
+  = bootstrap_flash
+  %br
+  %h2= "Editar foto de " + @photo_category.title
+  %br
+  = render 'form'

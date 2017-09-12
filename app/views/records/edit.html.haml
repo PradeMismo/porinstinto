@@ -1,2 +1,9 @@
-%h2= "Editar disco"
-= render 'form'
+= render partial: 'layouts/navbar2'
+
+#records.container
+  %br
+  = bootstrap_flash
+  %br
+  %h2= "Editar disco"
+  %br
+  = render 'form'

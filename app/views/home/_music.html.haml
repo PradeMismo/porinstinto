@@ -1,12 +1,7 @@
-#music.container
-  %br
-  .row
-    - @records.each do |record|
-      .col-md-4
-        .record_box
-          %h3= link_to record.name, record_path(record)
-          = link_to(image_tag(record.photo.url(:gallery)), record_path(record))
-          
-  %br
-  /.text-center= link_to("discografía", records_path, class: "btn btn-danger")
-  /%br
+#music
+  .container
+    %br
+    = render partial: 'records/record_table', locals: {records: @records}    
+    %br
+    .text-center= link_to("discografía", records_path, class: "btn btn-danger")
+    %br

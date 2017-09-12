@@ -2,7 +2,7 @@
   .form-inputs
     .row
       .col-md-4= f.input :name, required: true
-      .col-md-4= f.input :publish_date, required: true
+      .col-md-4= f.input :publish_date, as: :date_picker, required: true
       .col-md-4= f.file_field :photo
     %br
     .row

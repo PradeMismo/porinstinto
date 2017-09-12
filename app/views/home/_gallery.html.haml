@@ -13,8 +13,8 @@
       - @videos.each do |video|
         .col-md-4
           .video_box
+            %h3= link_to video.title, video.youtube_link, target: "_blank"
             = link_to(image_tag(video.thumbnail_url), video_path(video))
-            %h3= link_to video.title, video_path(video)
     %br
-  /  .text-center= link_to("más videos", video_categories_path, class: "btn btn-danger")
-  /  %br
+    .text-center= link_to("más videos", video_categories_path, class: "btn btn-danger")
+    %br

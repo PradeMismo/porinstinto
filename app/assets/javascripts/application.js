@@ -4,7 +4,9 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
+//= require lightbox.min
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require smooth-scrolling
 //= require hoover
+//= require tabs

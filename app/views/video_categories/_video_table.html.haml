@@ -1,18 +1,15 @@
-%h2= category.title
+%h2
+  = category.title
+  -  if current_user.try(:admin?) 
+    .pull-right
+      = link_to fa_icon("plus-circle"), new_video_category_video_path(category),              :class => "btn btn-success"
+      = link_to fa_icon("edit") ,       edit_video_category_path(category),                   :class => "btn btn-primary" 
+      = link_to fa_icon("trash"), category, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
 %br
-
-.gallery_index
+.row
   - @videos[category.id].each do |video|
-    %li
-      .box
-        = link_to image_tag(video.thumbnail_url, :class => 'cover'), video_path(video)
-        %h3= video.title 
-        %p
-          %strong= link_to "Ver video", video_path(video)
-  = will_paginate @videos[category.id], :param_name => "page" + category.id.to_s       
-- if current_user.try(:admin?)
-  = link_to "Nuevo vídeo", new_video_category_video_path(category), :class => "button green hover" 
-  = link_to "Editar", edit_video_category_path(category), :class => "button blue" 
-  = link_to "Borrar", category, :confirm => '¿Estás seguro?', :method => :delete, :class => "button red"
-%br
-.separator
+    .col-md-4
+      .video_box
+        %h3= link_to video.title, video_path(video)
+        = link_to(image_tag(video.thumbnail_url), video_path(video))        
+  = will_paginate @videos[category.id], :param_name => "page" + category.id.to_s

@@ -11,7 +11,6 @@ class RecordsController < ApplicationController
     if current_user.try(:admin?) 
       flash.now[:tip] = "Por favor, crea canciones para este disco" unless @songs.present?
     end 
-    gon.songs = @songs
   end
 
 
