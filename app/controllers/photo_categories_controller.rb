@@ -13,7 +13,7 @@ class PhotoCategoriesController < ApplicationController
 
 
   def new
-    flash.now[:tip] = "Adjunta una imagen de 300x180"  
+    flash.now[:info] = "Adjunta una imagen de 300x180"  
   end 
 
   def create

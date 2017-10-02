@@ -6,8 +6,8 @@ class BioEntriesController < ApplicationController
     @members = Member.all
     @band_photo = BandPhoto.first
     if current_user.try(:admin?) 
-      flash.now[:tip] = "Por favor, sube una foto del grupo" unless @band_photo.present?
-      flash.now[:tip] = "No hay entradas en la bio de la banda" unless @bio_entries.present?
+      flash.now[:info] = "Por favor, sube una foto del grupo" unless @band_photo.present?
+      flash.now[:info] = "No hay entradas en la bio de la banda" unless @bio_entries.present?
     end 
   end
 

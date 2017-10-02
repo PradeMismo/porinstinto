@@ -2,7 +2,7 @@
   %br
   .row.text-center
     %a{"data-lightbox" => @record.name, :href => @record.photo.url, "data-title" => @record.name, :class => 'zoom'}
-      = image_tag @record.photo.url(:gallery)
+      = image_tag @record.photo.url(:gallery), class: "img-thumbnail"
   / .row
   /   .col-md-12
   /     = render partial: 'spotify', locals: {album_url: @record.get_spotify_url} if @record.spotify_link.present?

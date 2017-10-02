@@ -9,13 +9,13 @@ class RecordsController < ApplicationController
   def show
     @songs = @record.songs
     if current_user.try(:admin?) 
-      flash.now[:tip] = "Por favor, crea canciones para este disco" unless @songs.present?
+      flash.now[:info] = "Por favor, crea canciones para este disco" unless @songs.present?
     end 
   end
 
 
   def new
-    flash.now[:tip] = "Adjunta una imagen de 300x300. Marca la casilla 'own' si es un disco propio de estudio, o en blanco si es un recopilatorio."  
+    flash.now[:info] = "Adjunta una imagen de 300x300. Marca la casilla 'own' si es un disco propio de estudio, o en blanco si es un recopilatorio."  
   end 
 
   def create

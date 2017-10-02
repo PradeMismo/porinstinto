@@ -63,9 +63,9 @@ module CarouselHelper
         class: ('carousel-caption'),
       }
 
-      title = content_tag(:h3, input_slide.title)
-      test  = content_tag(:p, input_slide.description) 
-      link  = (link_to 'VER MÁS', input_slide.link, class: "btn btn-danger")
+      title = input_slide.title.present?       ? content_tag(:h1, input_slide.title)                            : ""
+      test  = input_slide.description.present? ? content_tag(:h4, input_slide.description)                      : "" 
+      link  = input_slide.link.present?        ? (link_to 'VER MÁS', input_slide.link, class: "btn btn-danger") : ""
       content_tag(:div, safe_join([title, test, link]),options)
     end
 

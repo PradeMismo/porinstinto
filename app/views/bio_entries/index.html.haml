@@ -2,16 +2,20 @@
 
 #bio.container
   .row
-    .col-md-8
+    .col-md-7
       %br
-      = bootstrap_flash
+      = bootstrap_flash 
       %h2
         = "Biografía"
         .pull-right= link_to fa_icon("plus-circle"), new_bio_entry_path, :class => "btn btn-success" if current_user.try(:admin?) 
-
       = render partial: 'chapters'  
-      
-      = render partial: 'band_photo'
-
-    .col-md-4
-      = render partial: 'members_sidebar'
+      %br
+      %hr
+      / %br
+      / = render partial: 'description' 
+      %br      
+      = render partial: 'members'
+    .col-md-5 
+      %br 
+      %a{"data-lightbox" => "band", :href => "band2.jpg", "data-title" => "Por Instinto", :class => 'zoom'}
+        = image_tag(("band2.jpg"), class: "img-thumbnail")

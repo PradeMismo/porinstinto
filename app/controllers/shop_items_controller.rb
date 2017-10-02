@@ -2,7 +2,7 @@ class ShopItemsController < ApplicationController
   load_and_authorize_resource
 
   def new
-    flash.now[:tip] = "Adjunta una imagen. Asigna un valor de relevancia para posicionar el item en la tienda."  
+    flash.now[:info] = "Adjunta una imagen. Asigna un valor de relevancia para posicionar el item en la tienda."  
   end 
 
   def create

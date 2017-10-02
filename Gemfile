@@ -49,11 +49,14 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'momentjs-rails'
+gem 'masonry-rails'
 
 # Form helpers
 gem 'simple_form'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip-av-transcoder'
+gem 'paperclip-ffmpeg', '~> 1.2.0'
 # Sorting and pagination
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'will_paginate', '~> 3.1.0'

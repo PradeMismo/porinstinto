@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
 
 
   def new
-    flash.now[:tip] = "Puedes adjuntar una imagen, link externo o link de youtube"  
+    flash.now[:info] = "Puedes adjuntar una imagen, link externo o link de youtube"  
   end 
 
   def create

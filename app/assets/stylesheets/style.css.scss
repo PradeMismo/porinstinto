@@ -32,9 +32,21 @@ hr{
   background-image: -o-linear-gradient(left, white, grey, white); 
 }
 
+
+/* IMAGES */
+a:hover img.img-thumbnail {
+    border: solid 1px #CCC;
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
+}
+
 /* DESCRIPTION CONTAINER*/
 #description {
-    background-image: url("bg2.jpg");
+    background-image: url("bg1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -44,11 +56,15 @@ hr{
 
 /* TOUR CONTAINER*/
 #tour {
-    background-color: black;
+    background-image: url("bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #tour img{
     width: 100%;
+    -webkit-filter: grayscale(80%);
+    filter: grayscale(80%);    
 }
 
 #tour h6{
@@ -69,11 +85,16 @@ hr{
 
 /* MUSIC CONTAINER */
 #music {
-  background-image: url("bg2.jpg");
-  background-attachment: fixed;
 }
 
 /* GALLERY CONTAINER */
+#gallery {
+    background-image: url("bg2.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .grid-item {
   float: left;
   width: 20%;
@@ -88,7 +109,7 @@ hr{
 /* BAND CONTAINER*/
 #band {
     background-image: url("band.jpg");
-    height: 300px;
+    height: 450px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -122,6 +143,9 @@ footer {
     background-color: #2d2d30;
     color: #f5f5f5;
     padding: 32px;
+    background-image: url("bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 footer a {
@@ -130,6 +154,5 @@ footer a {
 
 /* RECORD CONTAINER */
 #records {
-    background-image: url("bg2.jpg");
 }
 

@@ -1,0 +1,12 @@
+%br
+.pull-right= link_to fa_icon("plus-circle"), new_member_path, :class => "btn btn-success" if current_user.try(:admin?) 
+%br
+.row
+  - @members.each do |member|
+    .col-md-4.text-center
+      - if current_user.try(:admin?)
+        .pull-right
+          = link_to fa_icon("edit") , edit_member_path(member),                                 :class => "btn btn-primary" 
+          = link_to fa_icon("trash"), member, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
+      %a{"data-lightbox" => "members", :href => member.photo.url, "data-title" => member.name + ": " +member.instrument, :class => 'zoom'}
+        = image_tag member.photo.url(:cover), class: "img-thumbnail img-circle" 

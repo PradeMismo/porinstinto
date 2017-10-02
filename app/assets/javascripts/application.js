@@ -9,4 +9,5 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require smooth-scrolling
 //= require hoover
+//= require concert-datatables.js
 //= require tabs

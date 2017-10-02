@@ -3,13 +3,12 @@ class SongsController < ApplicationController
 
   def new
     @record = Record.find(params[:record_id])    
-    flash.now[:tip] = "Adjunta un fichero de audio .ogg"    
+    flash.now[:info] = "Adjunta un fichero de audio .ogg"    
   end 
 
   def create
     @record = Record.find(params[:record_id])    
     @song = @record.songs.new(song_params)
-#throw @song
     if @song.save
       flash[:success] = "Song succesfully created"
       redirect_to @record

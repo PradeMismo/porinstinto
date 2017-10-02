@@ -1,2 +1,0 @@
-jQuery ->
-  $('#concerts').dataTable()

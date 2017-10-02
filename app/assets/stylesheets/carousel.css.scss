@@ -1,18 +1,37 @@
 /* CAROUSEL */ 
+.carousel-inner{
+  width:100%;
+  /*max-height: 720px !important;*/
+}
+
 .carousel-inner img {
   width: 100%; /* Set width to 100% */
   margin: auto;
+  -webkit-filter: grayscale(30%);
+  filter: grayscale(30%);     
+}
+
+.carousel-caption {
+  top: 60%;
+  transform: translateY(-40%);
+  bottom: initial;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d; 
+  transform-style: preserve-3d;
+  text-shadow: 2px 2px #000; 
 }
 
 .carousel-caption h3 {
   color: #fff !important;
+  text-shadow: 2px 2px #000;
 }
 
-@media (max-width: 600px) {
-  .carousel-caption {
-    display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-  }
-}
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+/*@media (max-width: 600px) {*/
+/*  .carousel {*/
+/*    display: none;*/
+/*  }*/
+/*}*/
 
 /* CAROUSEL HANDLERS */ 
 .carousel-control .icon-prev, .carousel-control .fa-chevron-left {

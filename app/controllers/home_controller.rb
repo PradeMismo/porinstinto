@@ -6,6 +6,5 @@ class HomeController < ApplicationController
     @images= Image.all
     @videos= Video.last(3)
     @entries= Entry.last(3)
-    @band_photo = BandPhoto.first
   end
 end

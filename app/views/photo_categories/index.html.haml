@@ -3,20 +3,14 @@
 #photos.container
   %br
   = bootstrap_flash
-/ %article.post
-/   - if current_user.try(:admin?) 
-/     .right
-/       = link_to "Nueva categoría", new_photo_category_path, :class => "button green hover"
-/       = link_to "Log out", destroy_user_session_path, :confirm => '¿Estás seguro?', :method => :delete, :class => "button black"
+  %h2
+    ="fotos"
+    .pull-right= link_to fa_icon("plus-circle"), new_photo_category_path, :class => "btn btn-success" if current_user.try(:admin?) 
+  %br 
 
-/   %h2="fotos"
-/   %br 
-
-/ .gallery_index
-/   - @photo_categories.each do |category|
-/     %li
-/       .box
-/         = link_to image_tag(category.photo.url(:cover), :class => 'cover'), photo_category_path(category)
-/         %h3= category.title 
-/         %p
-/           %strong= link_to "Ver fotos", photo_category_path(category)
+  .row
+    - @photo_categories.each do |category|
+      .col-md-4
+        .video_box
+          %h3= link_to category.title, photo_category_path(category)
+          = link_to image_tag(category.photo.url(:cover)), photo_category_path(category)

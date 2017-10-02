@@ -2,7 +2,7 @@ class BandPhotosController < ApplicationController
   load_and_authorize_resource
 
   def new
-    flash.now[:tip] = "Adjunta una imagen de 540px de ancho"    
+    flash.now[:info] = "Adjunta una imagen de 540px de ancho"    
   end 
 
   def create

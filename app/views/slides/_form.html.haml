@@ -8,8 +8,11 @@
     .row
       .col-md-4= f.input :slide_order
       .col-md-4
-        = "Contenido del Slider"
+        = "Foto del Slider"
         = f.file_field :photo
+      .col-md-4
+        = "Vídeo del Slider"
+        = f.file_field :video
   %br
   .form-actions.row
     .col-md-4= f.button :submit

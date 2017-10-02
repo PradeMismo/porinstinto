@@ -10,7 +10,7 @@ class SlidesController < ApplicationController
 
 
   def new
-    flash.now[:tip] = "Adjunta una imagen o vídeo de 1200x700"   
+    flash.now[:info] = "Adjunta una imagen o vídeo de 1280x720"   
   end 
 
   def create
@@ -26,6 +26,7 @@ class SlidesController < ApplicationController
 
 
   def edit
+    flash.now[:info] = "Adjunta una imagen o vídeo de 1280x720"     
   end
 
   def update
@@ -48,6 +49,6 @@ class SlidesController < ApplicationController
   private
 
   def slide_params
-    params.require(:slide).permit(:title, :description, :link, :photo, :slide_order)
+    params.require(:slide).permit(:title, :description, :link, :photo, :video, :slide_order)
   end   
 end

@@ -5,7 +5,7 @@ class VideosController < ApplicationController
   end
 
   def new
-    flash.now[:tip] = "Adjunta un link a un video de youtube"      
+    flash.now[:info] = "Adjunta un link a un video de youtube"      
     @video_category = VideoCategory.find(params[:video_category_id])    
   end 
 

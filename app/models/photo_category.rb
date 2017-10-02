@@ -1,6 +1,6 @@
 class PhotoCategory < ActiveRecord::Base
   # DECLARATIONS
-  has_attached_file :photo, :styles => { :cover => "300x180>" }, dependent: :destroy
+  has_attached_file :photo, :styles => { :cover => "300x180#" }, dependent: :destroy
   
   # RELATIONSHIPS
   has_many :images, dependent: :destroy
