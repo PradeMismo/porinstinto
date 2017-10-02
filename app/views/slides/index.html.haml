@@ -14,8 +14,8 @@
       .pull-right 
         = link_to fa_icon("edit") , edit_slide_path(slide),                                  :class => "btn btn-primary" 
         = link_to fa_icon("trash"), slide, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
-      - unless slide.video?
-        = image_tag slide.photo.url(:index), :class => 'img-thumbnail'
-      - else
-        = image_tag slide.video.url(:thumb), :class => 'img-thumbnail'
-        / = video_tag slide.video.url(:video)
+      / - unless slide.video?
+      = image_tag slide.photo.url(:index), :class => 'img-thumbnail'
+      / - else
+      / = image_tag slide.video.url(:thumb), :class => 'img-thumbnail'
+      / = video_tag slide.video.url(:video)
