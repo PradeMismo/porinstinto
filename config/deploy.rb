@@ -2,7 +2,7 @@
 lock '3.9.1'
 
 set :application, 'porinstinto'
-set :repo_url, 'git@github.com:PradeMismo/porinstinto.git'
+set :repo_url, 'git@github.com:JavierPradillo/porinstinto.git'
 
 set :deploy_to, '/home/deploy/porinstinto'
 
