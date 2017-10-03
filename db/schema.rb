@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505091728) do
+ActiveRecord::Schema.define(version: 20171003151355) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              limit: 255, default: "", null: false
@@ -91,11 +91,6 @@ ActiveRecord::Schema.define(version: 20170505091728) do
     t.datetime "photo_updated_at"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "photo_categories", force: :cascade do |t|
     t.string   "title",              limit: 255
     t.datetime "created_at",                     null: false
@@ -147,6 +142,10 @@ ActiveRecord::Schema.define(version: 20170505091728) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "slide_order"
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
   end
 
   create_table "songs", force: :cascade do |t|
