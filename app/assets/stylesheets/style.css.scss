@@ -43,7 +43,7 @@ a:hover img.img-thumbnail {
 
 /* DESCRIPTION CONTAINER*/
 #description {
-    background-image: url("bg1.jpg");
+    background-image: url(image_path('bg1.jpg'));
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,7 +56,7 @@ a:hover img.img-thumbnail {
 
 /* TOUR CONTAINER*/
 #tour {
-    background-image: url("bg2.jpg");
+    background-image: url(image_path('bg2.jpg'));
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -89,7 +89,7 @@ a:hover img.img-thumbnail {
 
 /* GALLERY CONTAINER */
 #gallery {
-    background-image: url("bg2.jpg");
+    background-image: url(image_path('bg2.jpg'));
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,7 +108,7 @@ a:hover img.img-thumbnail {
 
 /* BAND CONTAINER*/
 #band {
-    background-image: url("band.jpg");
+    background-image: url(image_path('band.jpg'));
     height: 450px;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,7 +143,7 @@ footer {
     background-color: #2d2d30;
     color: #f5f5f5;
     padding: 32px;
-    background-image: url("bg2.jpg");
+    background-image: url(image_path('bg2.jpg'));
     background-repeat: no-repeat;
     background-size: cover;
 }
