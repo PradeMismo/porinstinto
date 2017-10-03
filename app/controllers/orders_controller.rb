@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+=beginclass OrdersController < ApplicationController
   authorize_resource
 
   def new
@@ -30,4 +30,4 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:name, :email, :message, :phone_number, :address, :items, :nickname)
   end
-end
+end=end

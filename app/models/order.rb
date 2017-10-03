@@ -1,4 +1,4 @@
-class Order < MailForm::Base
+=beginclass Order < MailForm::Base
   # ATTRIBUTES
   attribute :name
   attribute :email
@@ -23,4 +23,4 @@ class Order < MailForm::Base
       :from => %("#{name}" <#{email}>)
     }
   end
-end
+end=end
