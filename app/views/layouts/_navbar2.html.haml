@@ -22,8 +22,9 @@
 
         %li= link_to fa_icon("facebook"), "https://www.facebook.com/PorInstintoRock", {:target => "_blank", :title => "facebook"} 
         %li= link_to fa_icon("twitter"), "https://twitter.com/PorInstinto", {:target => "_blank", :title => "twitter"}
-        %li= link_to fa_icon("youtube"),"http://www.youtube.com/user/PorInstintoRock", {:target => "_blank", :title => "youtube"}
         %li= link_to fa_icon("spotify"), "https://play.spotify.com/artist/23pWE9qp8f5JlM4Z6bpz3C", {:target => "_blank", :title => "spotify"} 
+        %li= link_to fa_icon("youtube"),"http://www.youtube.com/user/PorInstintoRock", {:target => "_blank", :title => "youtube"}
+        %li= link_to fa_icon("instagram"), "https://www.instagram.com/por_instinto_rock/", {:target => "_blank", :title => "instagram"} 
         
         - if current_user.try(:admin?)
           %li.dropdown
