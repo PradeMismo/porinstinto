@@ -27,11 +27,11 @@
 }
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
-/*@media (max-width: 600px) {*/
-/*  .carousel {*/
-/*    display: none;*/
-/*  }*/
-/*}*/
+@media (max-width: 600px) {
+  .carousel {
+    display: none;
+  }
+}
 
 /* CAROUSEL HANDLERS */ 
 .carousel-control .icon-prev, .carousel-control .fa-chevron-left {

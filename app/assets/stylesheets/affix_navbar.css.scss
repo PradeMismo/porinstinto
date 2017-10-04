@@ -1,9 +1,5 @@
 /* BASIC NAVBAR */
-.navbar {
-    margin-bottom: 0;
-    background-color: transparent;
-    border: 0;
-}
+
 
 /* Link fonts */
 .navbar li a{
@@ -39,36 +35,68 @@
 }
 
 /* AFFIX */
-.affix {
-    top: 0;
-    width: 100%;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-    background-color: black;
-    border-color: black;
-}
+@media (min-width: 600px) {
+    .navbar {
+        margin-bottom: 0;
+        background-color: transparent;
+        border: 0;
+    }
 
-.affix a {
-    padding: 15px !important;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
+    .affix {
+        top: 0;
+        width: 100%;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        background-color: black;
+        border-color: black;
+    }
 
-.affix-top a {
-    padding: 20px !important;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
+    .affix a {
+        padding: 15px !important;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
 
-/* Brand */
-.affix-top .navbar-brand img{
-    height: 225%;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
+    .affix-top a {
+        padding: 20px !important;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
 
-.affix .navbar-brand img{
-    height: 150%;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    /* Brand */
+    .affix-top .navbar-brand img{
+        height: 225%;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+
+    .affix .navbar-brand img{
+        height: 150%;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+}
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+    .navbar {
+        margin-bottom: 0;
+        background-color: black;
+        border: 0;
+    }
+    .affix {
+        top: 0;
+        width: 100%;
+        background-color: black;
+        border-color: black;
+    }
+
+    /* Brand */
+    .affix-top .navbar-brand img{
+        height: 150%;
+    }
+
+    .affix .navbar-brand img{
+        height: 150%;
+    }
+
 }

@@ -1,11 +1,10 @@
-- concerts.each do |concert|
-  .row
-    .col-md-1= calendar_tag(concert.date)
-    .col-md-1
-    .col-md-9
-      - if current_user.try(:admin?)
-        .pull-right 
-          = link_to fa_icon("edit") , edit_concert_path(concert),                                :class => "btn btn-primary" 
-          = link_to fa_icon("trash"), concert, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
-      = concert_tag(concert)
-    .col-md-1
+.col-xs-12
+  - concerts.each do |concert|
+    .row
+      .col-xs-2= calendar_tag(concert.date)
+      .col-xs-10
+        - if current_user.try(:admin?)
+          .pull-right 
+            = link_to fa_icon("edit") , edit_concert_path(concert),                                :class => "btn btn-primary" 
+            = link_to fa_icon("trash"), concert, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
+        = concert_tag(concert)

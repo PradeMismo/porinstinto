@@ -4,3 +4,4 @@
       .record_box
         %h3= link_to record.name, record_path(record)
         = link_to(image_tag(record.photo.url(:gallery)), record_path(record))
+      %br

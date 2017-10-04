@@ -11,5 +11,6 @@
     .col-md-4
       .video_box
         %h3= link_to video.title, video_path(video)
-        = link_to(image_tag(video.thumbnail_url), video_path(video))        
+        = link_to(image_tag(video.thumbnail_url), video_path(video))
+      %br        
   = will_paginate @videos[category.id], :param_name => "page" + category.id.to_s
