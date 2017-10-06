@@ -19,7 +19,7 @@ module ApplicationHelper
     separator = content_tag(:hr)
     location  = content_tag(:h4, concert.location)
 
-    content = safe_join([info,separator,location])
+    content = safe_join([location,separator,info])
     content_tag(:div, content, class: "concert-desc")
   end
 end
