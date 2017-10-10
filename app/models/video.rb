@@ -6,8 +6,9 @@ class Video < ActiveRecord::Base
   validates_presence_of :title, :youtube_link
 
   # SCOPES
-  default_scope  { order(:created_at => :desc) }
-  
+  default_scope   { order(:created_at => :desc) }
+  scope :home, -> { where(show: true) }
+
   # METHODS
   def youtube_id
     youtube_id = ""

@@ -11,5 +11,5 @@
     .col-md-3
     .col-md-6
       = link_to(fa_icon("download", text: "descargar"), @record.download_link, target: "_blank", class: "btn btn-primary btn-block") if @record.download_link.present?
-      = link_to(fa_icon("spotify", text:  "spotify"  ), @record.spotify_link,  target: "_blank", class: "btn btn-success btn-block") if @record.youtube_link.present?
-      = link_to(fa_icon("youtube", text:  "youtube"  ), @record.youtube_link,  target: "_blank", class: "btn btn-danger btn-block") if @record.spotify_link.present?
+      = link_to(fa_icon("spotify", text:  "spotify"  ), @record.spotify_link,  target: "_blank", class: "btn btn-success btn-block") if @record.spotify_link.present?
+      = link_to(fa_icon("youtube", text:  "youtube"  ), @record.youtube_link,  target: "_blank", class: "btn btn-danger btn-block") if @record.youtube_link.present?
