@@ -11,6 +11,6 @@ class Slide < ActiveRecord::Base
   #validates_attachment_content_type :video, :content_type => ['video/mp4']
 
   # SCOPES
-  default_scope  { order(:slide_order => :desc) }
+  default_scope  { order(:slide_order => :asc) }
 
 end
