@@ -1,5 +1,8 @@
 class Record < ActiveRecord::Base
   # DECLARATIONS
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   has_attached_file :photo, :styles => {:gallery => "300x300>"}, dependent: :destroy
   
   # RELATIONSHIPS

@@ -1,5 +1,9 @@
 class PhotoCategory < ActiveRecord::Base
   # DECLARATIONS
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  # DECLARATIONS
   has_attached_file :photo, :styles => { :cover => "300x180#" }, dependent: :destroy
   
   # RELATIONSHIPS

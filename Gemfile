@@ -60,6 +60,7 @@ gem 'paperclip-ffmpeg', '~> 1.2.0'
 # Sorting and pagination
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'will_paginate', '~> 3.1.0'
+gem 'friendly_id', '~> 5.1.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

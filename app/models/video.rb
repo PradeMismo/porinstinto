@@ -1,4 +1,8 @@
 class Video < ActiveRecord::Base
+  # DECLARATIONS
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   # RELATIONSHIPS
   belongs_to :video_category
 
