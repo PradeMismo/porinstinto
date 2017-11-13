@@ -40,6 +40,18 @@ hr{
   background-image: -o-linear-gradient(left, white, grey, white); 
 }
 
+/* VÍDEOS */
+.hs-responsive-embed-youtube {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 25px;
+}
+
+.hs-responsive-embed-youtube iframe {
+  position: absolute;
+  width: 100%!important;
+  height: 100%!important;
+}
 
 /* IMAGES */
 a:hover img.img-thumbnail {

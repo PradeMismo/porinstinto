@@ -10,7 +10,8 @@
         = link_to fa_icon("edit") , edit_video_path(@video),                                  :class => "btn btn-primary" 
         = link_to fa_icon("trash"), @video, :confirm => '¿Estás seguro?', :method => :delete, :class => "btn btn-danger"
   %br
-  .text-center
+  .div.hs-responsive-embed-youtube
     %iframe{:frameborder => "0", :height => "315", :src => @video.youtube_embeed, :width => "560"}
+  %br
   %br
   %p= @video.description
