@@ -16,11 +16,19 @@ label {
     font-weight: normal;
 }
 
+/* BOTONES */
+@media (max-width: 600px) {
+  .btn{
+    font-size: 12px;
+  }
+}
+
 .btn {
     font-weight: bold;
     text-transform: uppercase;
 }
 
+/* CONTAINER */
 .container {
     padding: 40px 60px;
 }
@@ -44,7 +52,6 @@ hr{
 .hs-responsive-embed-youtube {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  padding-top: 25px;
 }
 
 .hs-responsive-embed-youtube iframe {
@@ -182,3 +189,13 @@ footer a {
 #records {
 }
 
+/* NUEVO CONTAINER */
+@media (max-width: 600px) {
+  #nuevo h2{
+    font-size: 18px;
+  }
+
+  #nuevo h3{
+    font-size: 14px;
+  }
+}
