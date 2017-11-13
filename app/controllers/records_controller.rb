@@ -54,6 +54,6 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:name, :publish_date, :description, :download_link, :own, :photo, :youtube_link, :spotify_link)
+    params.require(:record).permit(:name, :publish_date, :description, :download_link, :own, :photo, :youtube_link, :spotify_link, :shop_link)
   end  
 end

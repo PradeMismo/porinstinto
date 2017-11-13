@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106105618) do
+ActiveRecord::Schema.define(version: 20171113104410) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              limit: 255, default: "", null: false
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20171106105618) do
     t.string   "youtube_link",       limit: 255
     t.string   "spotify_link",       limit: 255
     t.string   "slug"
+    t.string   "shop_link"
   end
 
   create_table "shop_items", force: :cascade do |t|
