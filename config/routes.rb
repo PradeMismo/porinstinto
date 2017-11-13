@@ -10,9 +10,12 @@ WebPi::Application.routes.draw do
   resources :entries,     except: [:show]
   resources :home,        only:   [:index]
   resources :members,     except: [:index, :show]
+  resources :nuevo,       only:   [:index]  
   resources :shop_items,  except: [:index, :show]
   resources :slides,      except: [:show]
   resources :tags,        only:   [:show]
+  resources :tienda,      only:   [:index]
+
 
   resources :records do
     resources :songs, only: [:new, :create, :update]

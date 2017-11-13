@@ -1,0 +1,26 @@
+= render partial: 'layouts/navbar2'
+
+#nuevo.container
+  .row
+    .col-md-9
+      %br
+      %h2="la mina de sal"
+      %br
+      %iframe#ytplayer{:allowfullscreen => "", :frameborder => "0", :height => "405", :src => "https://www.youtube.com/embed/?listType=playlist&list=PL7wzUaDR0oVD_FyZDMNwS_Rw3OIZUvEWP", :type => "text/html", :width => "720"}
+      %br
+      %br
+      %h3="videoclip: la mala educación"
+      %br
+      %iframe#ytplayer{:allowfullscreen => "", :frameborder => "0", :height => "405", :src => "https://www.youtube.com/embed/QQvOk0lEG6U", :type => "text/html", :width => "720"}
+
+    .col-md-3
+      .well
+        %br
+        %br
+        %br
+        %br
+        %br
+          = link_to(fa_icon("download", text: "descargar"), "http://www.mediafire.com/file/84l6g08qw92lm81/La+Mina+de+Sal.zip",  target: "_blank", class: "btn btn-primary btn-block")
+          = link_to(fa_icon("spotify", text:  "spotify"  ), "https://open.spotify.com/album/1SJs6YnUMh9Crwbum4sY6v",  target: "_blank", class: "btn btn-success btn-block")
+          = link_to(fa_icon("youtube", text:  "youtube"  ), "https://www.youtube.com/playlist?list=PL7wzUaDR0oVD_FyZDMNwS_Rw3OIZUvEWP",  target: "_blank", class: "btn btn-danger  btn-block")
+          = link_to(fa_icon("shopping-cart", text:  "comprar"  ), "http://www.musikaze.com/es/musica/sellos/tienda.php?cod=3795&cat=1&bscr=la+mina+de+sal",  target: "_blank", class: "btn btn-default btn-block")
