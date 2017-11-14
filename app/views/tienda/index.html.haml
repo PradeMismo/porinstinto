@@ -3,6 +3,13 @@
 #tienda.container
   %br
   = bootstrap_flash
-  %h2
-    ="tienda"
-    
+  %h2="tienda"
+  %br
+  .row
+    .col-md-8
+      %h3="merchan"    
+      = link_to image_tag(("nakerband.jpeg"), class: "img-thumbnail"), "http://nakerband.com/tienda/porinstinto/es/", {:target => "_blank", :title => "merchan"}
+      %br
+      %br
+      %h3="la mina de sal"
+      = link_to image_tag(("la_mina.jpg"), class: "img-thumbnail"), "http://www.musikaze.com/es/musica/sellos/tienda.php?cod=3795&cat=1&bscr=la+mina+de+sal", {:target => "_blank", :title => "merchan"}
