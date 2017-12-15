@@ -49,6 +49,6 @@ class SlidesController < ApplicationController
   private
 
   def slide_params
-    params.require(:slide).permit(:title, :description, :link, :photo, :slide_order) #:video,
+    params.require(:slide).permit(:title, :description, :link, :photo, :slide_order, :video)
   end   
 end
