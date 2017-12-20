@@ -15,11 +15,15 @@ module ApplicationHelper
   end
 
   def concert_tag(concert)
-    info      = content_tag(:h5, concert.info)
+    tickets   = concert.ticket_link.present? ? link_to(fa_icon("ticket", text: concert.tickets),concert.ticket_link) : fa_icon("ticket", text: concert.tickets)
+    hour      = fa_icon("clock-o", text: concert.date.strftime("%H:%M"))
+    
+    info      = concert.event_link.present? ? link_to(content_tag(:h5, concert.info),concert.event_link) : content_tag(:h5, concert.info)
+    details   = content_tag(:h6, hour + " " + tickets)
     separator = content_tag(:hr)
     location  = content_tag(:h4, concert.location)
 
-    content = safe_join([location,separator,info])
+    content = safe_join([location,separator,info,details])
     content_tag(:div, content, class: "concert-desc")
   end
 end

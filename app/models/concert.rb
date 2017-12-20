@@ -9,16 +9,12 @@ class Concert < ActiveRecord::Base
   # METHODS
   def info
     results = ""
-    if bands.present?
-      results += "Con " + bands + ". "
-    end
-    if notes.present?
-      results += notes.to_s + "."
-    end
+    results += "Con " + bands + ". " if bands.present?
+    results += notes.to_s + "." if notes.present?
     return results
   end
 
   def location
-    return concert_hall + ", " + place
+    return concert_hall + ", " + place 
   end
 end
