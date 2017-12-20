@@ -1,21 +1,22 @@
 = simple_form_for @entry, :html=> { id: 'form' } do |f|
   .form-inputs
-    .row
-      .col-md-4= f.input :publish_date, as: :date_picker, required: true 
-      .col-md-4= f.input :title, required: true
-      .col-md-4= f.association :tag, required: true
-    %br  
-    .row  
-      .col-md-12= f.input :content, required: true
-    %br  
-    .row 
-      .col-md-12= f.input :youtube_link
-    %br  
-    .row 
-      .col-md-12= f.input :external_link
-    %br  
-    .row 
-      .col-md-12= f.file_field :photo
+    .well
+      .row
+        .col-md-6= f.input :publish_date, as: :date_picker, required: true 
+        .col-md-6= f.input :title, required: true
+      .row
+        .col-md-6= f.association :tag, required: true
+    %br 
+    .well 
+      .row  
+        .col-md-12= f.input :content, required: true
+      %br  
+      .row 
+        .col-md-6= f.input :youtube_link
+        .col-md-6= f.input :external_link
+      %br  
+      .row 
+        .col-md-6= f.input :photo, as: :file
   %br
   .form-actions.row
     .col-md-4= f.button :submit

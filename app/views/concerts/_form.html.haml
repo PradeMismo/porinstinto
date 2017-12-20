@@ -1,20 +1,21 @@
 = simple_form_for @concert, :html=> { id: 'form' } do |f|
   .form-inputs
-    .row
-      .col-md-4= f.input :date, as: :date_picker, required: true
-      .col-md-4= f.input :place, required: true
-      .col-md-4= f.input :concert_hall, required: true
-    %br
-    .row  
-      .col-md-4= f.input :tickets, required: true
-      .col-md-4= f.input :bands
-      .col-md-4= f.input :notes
-    %br
-    .row 
-      .col-md-12= f.input :event_link
-    %br
-    .row 
-      .col-md-12= f.input :ticket_link
+    .well
+      .row
+        .col-md-6= f.input :place, required: true
+        .col-md-6= f.input :concert_hall, required: true
+      %br
+      .row 
+        .col-md-6= f.input :date, as: :datetime_picker, required: true 
+        .col-md-6= f.input :tickets, required: true
+    .well
+      .row
+        .col-md-6= f.input :bands
+        .col-md-6= f.input :notes
+      %br
+      .row 
+        .col-md-6= f.input :event_link
+        .col-md-6= f.input :ticket_link
   %br
   .form-actions.row
     .col-md-4= f.button :submit

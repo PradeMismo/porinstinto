@@ -1,8 +1,12 @@
 = simple_form_for @member, :html=> { id: 'form' } do |f|
-  .form-inputs.row
-    .col-md-4= f.input :name, required: true
-    .col-md-4= f.input :instrument, required: true
-    .col-md-4= f.file_field :photo
+  .form-inputs
+    .well
+      .row
+        .col-md-6= f.input :name, required: true
+        .col-md-6= f.input :instrument, required: true
+      %br  
+      .row  
+        .col-md-6= f.input :photo, as: :file
   %br
   .form-actions.row
     .col-md-4= f.button :submit

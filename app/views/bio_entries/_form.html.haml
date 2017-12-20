@@ -1,11 +1,12 @@
 = simple_form_for @bio_entry, :html=> { id: 'form' } do |f|
   .form-inputs
-    .row
-      .col-md-4= f.input :title, required: true
-      .col-md-4= f.input :chapter_order, required: true
-    %br
-    .row  
-      .col-md-12= f.input :content, required: true
+    .well
+      .row
+        .col-md-6= f.input :title, required: true
+        .col-md-6= f.input :chapter_order, required: true
+      %br
+      .row  
+        .col-md-12= f.input :content, required: true
   %br
   .form-actions.row
     .col-md-4= f.button :submit

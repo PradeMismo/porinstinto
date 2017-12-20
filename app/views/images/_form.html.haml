@@ -1,7 +1,11 @@
 = simple_form_for [@photo_category, @image], :html=> { id: 'form' } do |f|
-  .form-inputs.row
-    .col-md-4= f.input :description
-    .col-md-4= f.file_field :photo
+  .form-inputs
+    .well
+      .row
+        .col-md-6= f.input :description
+      %br
+      .row
+        .col-md-6= f.input :photo, as: :file
   %br
   .form-actions.row
     .col-md-4= f.button :submit

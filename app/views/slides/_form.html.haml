@@ -1,18 +1,18 @@
 = simple_form_for @slide, :html=> { id: 'form' } do |f|
   .form-inputs
-    .row
-      .col-md-4= f.input :title
-      .col-md-4= f.input :description
-      .col-md-4= f.input :link
-    %br
-    .row
-      .col-md-4= f.input :slide_order
-      .col-md-4
-        = "Foto del Slider"
-        = f.file_field :photo
-      .col-md-4
-        = "Vídeo del Slider"
-        = f.file_field :video
+    .well
+      .row
+        .col-md-6= f.input :title
+        .col-md-6= f.input :description
+      %br
+      .row
+        .col-md-6= f.input :link
+        .col-md-6= f.input :slide_order
+    .well
+      .row
+        .col-md-6= f.input :photo, as: :file
+        .col-md-6= f.input :video, as: :file
   %br
   .form-actions.row
     .col-md-4= f.button :submit
+

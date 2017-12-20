@@ -1,6 +1,8 @@
 = simple_form_for @video_category, :html=> { id: 'form' } do |f|
-  .form-inputs.row
-    .col-md-4= f.input :title, required: true
+  .form-inputs
+    .well
+      .row
+        .col-md-6= f.input :title, required: true
   %br
   .form-actions.row
     .col-md-4= f.button :submit
