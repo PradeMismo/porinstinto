@@ -6,11 +6,11 @@ class VideosController < ApplicationController
 
   def new
     flash.now[:info] = "Adjunta un link a un video de youtube"      
-    @video_category = VideoCategory.find(params[:video_category_id])    
+    @video_category = VideoCategory.find_by_slug(params[:video_category_id])    
   end 
 
   def create
-    @video_category = VideoCategory.find(params[:video_category_id])    
+    @video_category = VideoCategory.find_by_slug(params[:video_category_id])    
     @video = @video_category.videos.new(video_params)
 
     if @video.save

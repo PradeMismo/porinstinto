@@ -2,11 +2,11 @@ class ImagesController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @photo_category = PhotoCategory.find(params[:photo_category_id])    
+    @photo_category = PhotoCategory.find_by_slug(params[:photo_category_id])    
   end 
 
   def create
-    @photo_category = PhotoCategory.find(params[:photo_category_id])    
+    @photo_category = PhotoCategory.find_by_slug(params[:photo_category_id])    
     @image = @photo_category.images.new(image_params)
     if @image.save
       flash[:success] = "Image succesfully created"

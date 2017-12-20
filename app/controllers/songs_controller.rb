@@ -2,12 +2,11 @@ class SongsController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @record = Record.find(params[:record_id])    
-    flash.now[:info] = "Adjunta un fichero de audio .ogg"    
+    @record = Record.find_by_slug(params[:record_id])    
   end 
 
   def create
-    @record = Record.find(params[:record_id])    
+    @record = Record.find_by_slug(params[:record_id])    
     @song = @record.songs.new(song_params)
     if @song.save
       flash[:success] = "Song succesfully created"
