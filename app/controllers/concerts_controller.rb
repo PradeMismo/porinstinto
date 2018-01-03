@@ -2,12 +2,12 @@ class ConcertsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @concerts = Concert.next.order("date ASC")
+    @concerts = Concert.next
     flash.now[:info] = "Actualmente no hay conciertos programados" unless @concerts.present?
   end
 
   def last
-    @concerts = Concert.previous.order("date DESC")
+    @concerts = Concert.previous
   end
 
 
