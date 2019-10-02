@@ -1,12 +1,27 @@
 = render partial: 'layouts/navbar2'
 
-#concerts.container
-  %br 
-  = bootstrap_flash
-  %h2
-    ="próximos conciertos"
-    .pull-right= link_to fa_icon("plus-circle"), new_concert_path, :class => "btn btn-success" if current_user.try(:admin?) 
-  %br
-  = render partial: 'next_concerts', locals: {concerts: @concerts} 
-  %br 
-  .text-center= link_to("conciertos pasados", concerts_last_path, class: "btn btn-danger") 
+#concerts
+  .container
+    %br 
+    = bootstrap_flash
+    %h2
+      ="próximos conciertos"
+      .pull-right= link_to fa_icon("plus-circle"), new_concert_path, :class => "btn btn-success" if current_user.try(:admin?) 
+  .row
+    .col-md-2
+    .col-md-7
+      - if @concerts.present?
+        %br
+        %br
+        = render partial: 'concerts/next_concerts', locals: {concerts: @concerts}
+      - else
+        %br
+        %br
+        %br
+        %h6= "ACTUALMENTE NO TENEMOS CONCIERTOS PROGRAMADOS"
+        %br
+        %br
+        %br
+    .col-md-3
+  .container 
+    .text-center= link_to("conciertos pasados", concerts_last_path, class: "btn btn-danger") 
