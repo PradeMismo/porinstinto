@@ -136,7 +136,7 @@ a:hover img.img-thumbnail {
 
 /* BAND CONTAINER*/
 #band {
-    background-image: url(image_path('band.jpg'));
+    background: image-url('band.jpg');
     height: 450px;
     background-position: center;
     background-repeat: no-repeat;
