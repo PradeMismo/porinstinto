@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Bundler required for ued rails version
+gem 'bundler', '1.17.3' 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 # Use postgresql as the database for Active Record
