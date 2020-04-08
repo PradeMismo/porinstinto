@@ -15,8 +15,9 @@ class Record < ActiveRecord::Base
 
   # SCOPES
   default_scope  { order(:publish_date => :desc) }
-  scope :studio,      -> { where(own: true)  }
-  scope :compilation, -> { where(own: false) }
+  scope :album,  -> { where(own: true) }
+  scope :single, -> { where(own: false) }
+  scope :published, lambda{ |date = DateTime.now| where("publish_date <= ? ", date) }
   
   # METHODS
   def get_spotify_url

@@ -2,8 +2,13 @@ class RecordsController < ApplicationController
   load_and_authorize_resource find_by: :slug
 
   def index
-    @studio_records = Record.studio
-    @compilation_records = Record.compilation
+    unless current_user.try(:admin?) 
+      @albums = Record.album.published
+      @singles = Record.single.published
+    else
+      @albums = Record.album
+      @singles = Record.single
+    end
   end
 
   def show
@@ -15,7 +20,7 @@ class RecordsController < ApplicationController
 
 
   def new
-    flash.now[:info] = "Adjunta una imagen de 300x300. Marca la casilla 'own' si es un disco propio de estudio, o en blanco si es un recopilatorio."  
+    flash.now[:info] = "Adjunta una imagen de 300x300. Marca la casilla 'own' si es un disco propio de estudio, o déjala en blanco si es un single."  
   end 
 
   def create

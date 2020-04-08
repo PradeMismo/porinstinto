@@ -7,10 +7,10 @@
     ="discografía"
     .pull-right= link_to fa_icon("plus-circle"), new_record_path, :class => "btn btn-success" if current_user.try(:admin?) 
   %br 
-  = render partial: 'record_table', locals: {records: @studio_records}
+  = render partial: 'record_table', locals: {records: @albums}
   %br 
   %hr.black
   %br
-  %h2="recopilatorios"
+  %h2="singles"
   %br 
-  = render partial: 'record_table', locals: {records: @compilation_records}  
+  = render partial: 'record_table', locals: {records: @singles}  
